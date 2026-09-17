@@ -1,0 +1,8 @@
+nav{
+    background-color: var(--primary-color);
+    color: var(--text-light-color);
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}

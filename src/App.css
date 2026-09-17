@@ -1,0 +1,9 @@
+.dashboard{
+  display: flex;
+}
+
+.sidebar{
+  width: 250px;
+  height: 100vh;
+  background-color: var(--secondary-color);
+}
