@@ -1,14 +1,76 @@
-:root{
-  --primary-color: #0D1C42;
-  --secondary-color: #22396F;
-  --text-dark-color: #010736;
-  --text-light-color: #FCF1D0;
-  --background-color: #FCF1D0;
+:root {
+    /* Main Colors */
+    --primary-color: #6C4AB6;
+    --secondary-color: #4B327A;
+
+    /* Text Colors */
+    --text-dark-color: #27212F;
+    --text-light-color: #FFFFFF;
+    --text-muted-color: #7A7185;
+
+    /* Background Colors */
+    --background-color: #F7F4FA;
+    --surface-color: #FFFFFF;
+
+    /* Border */
+    --border-color: #E4DDEA;
+
+    /* Status Colors */
+    --success-color: #3E8E5B;
+    --warning-color: #D99A2B;
+    --danger-color: #C94C4C;
+    --info-color: #7A5CC7;
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+
+    /* Font Sizes */
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 16px;
+    --font-lg: 20px;
+    --font-xl: 24px;
+    --font-xxl: 32px;
+
+    /* Font Weight */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+
+    /* Shadow */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.10);
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-dark-color);
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
 }

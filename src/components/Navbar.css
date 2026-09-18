@@ -1,8 +1,30 @@
-nav{
+.navbar {
+    height: 70px;
+    padding: 0 var(--space-xl);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     background-color: var(--primary-color);
     color: var(--text-light-color);
-    height: 80px;
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar h2 {
+    margin: 0;
+    font-size: var(--font-lg);
+    font-weight: var(--font-semibold);
+}
+
+.navbar h3 {
+    margin: 0;
+    padding: var(--space-sm) var(--space-md);
+
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+
+    background-color: var(--secondary-color);
+    border-radius: var(--radius-md);
 }

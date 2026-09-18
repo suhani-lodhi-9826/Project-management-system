@@ -1,0 +1,32 @@
+.sidebar {
+    width: 220px;
+    min-height: calc(100vh - 70px);
+
+    padding: var(--space-lg);
+
+    background-color: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: var(--space-md);
+    margin-bottom: var(--space-sm);
+
+    color: var(--text-dark-color);
+    font-size: var(--font-md);
+    font-weight: var(--font-medium);
+
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}

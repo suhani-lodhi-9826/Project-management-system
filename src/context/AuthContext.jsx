@@ -9,6 +9,17 @@ export function AuthProvider({children}){
     });
     const [loading, setLoading]= useState(true);
 
+    useEffect(() => {
+
+        const mockUser = localStorage.getItem("user");
+
+        if (mockUser) {
+            setUser(JSON.parse(mockUser));
+        }
+
+        setLoading(false);
+    }, []);
+
 
     async function login(email, password, role){
      let users = await fetch("http://localhost:3000/users");
@@ -23,7 +34,7 @@ export function AuthProvider({children}){
         return {success:false};
      }
      setUser(loggedUser);
-     setLoading(true)
+     setLoading(false);
      localStorage.setItem('user', JSON.stringify(loggedUser));
      return true
     }
@@ -32,7 +43,6 @@ export function AuthProvider({children}){
     function logout(){
         localStorage.removeItem('user')
         setUser(null);
-        setLoading(false)
     }
 
     let value={user,loading, login, logout};

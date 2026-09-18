@@ -7,8 +7,11 @@ export default function ProtectedRoutes({children}){
     const {user, loading} = useAuth();
     const navigate= useNavigate();
     console.log("protected route called", user)
-     
-   if (!user&& !loading) {
+    console.log("Loading:", loading);
+     if(loading){
+        return <div>Loading...</div>
+     }
+   if (!user) {
         return <Navigate to="/login" replace />;
     }
     

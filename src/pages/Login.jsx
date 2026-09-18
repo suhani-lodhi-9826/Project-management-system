@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import './Login.css';
 
 export default function Login(){
 
@@ -30,22 +31,29 @@ export default function Login(){
 
     return (
         <>
-        <h1>Login page</h1>
-          <form action={submitForm}>
-            <input name="email" type="email" placeholder="enter your email" />
-            <br /> <br/>
-            <input name="password" type="password" placeholder="enter your password"/>
-            <br /> <br/>
+       <div className="login-page">
+    <h1>Login page</h1>
+
+    <form className="login-form" action={submitForm}>
+        <input name="email" type="email" placeholder="Enter your email" />
+
+        <input name="password" type="password" placeholder="Enter your password"/>
+
+        <div className="role-options">
             <label>
                 <input type="radio" name="role" value="ADMIN" />
                 ADMIN
             </label>
+
             <label>
                 <input type="radio" name="role" value="MEMBER" />
                 MEMBER
             </label>
-            <button>Login</button>
-          </form>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
         </>
     )
 }
