@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { useLocation, useParams } from "react-router-dom";
 
 export default function AddProject() {
-    const projectId = useParams();
+    const projectId = useParams().id;
     const location = useLocation().pathname;
     console.log(location);
     const editpage = "/admin/dashboard/edit-project/2";
@@ -19,10 +19,6 @@ export default function AddProject() {
                 const res = await fetch("http://localhost:3000/users");
                 const data = await res.json();
                 setUsers(data);
-                 if(projectId){
-                   setCurrProject(data.filter((p)=> p.id==projectId));
-                   console.log("edituser", currProject);
-            }
 
             } catch (err) {
                 console.error("Failed to fetch users", err);
@@ -30,7 +26,14 @@ export default function AddProject() {
                 setLoadingUsers(false);
             }
 
+            if(projectId){
+                let project = await fetch("http://localhost:3000/projects/"+projectId);
+                project= await project.json();
+                setCurrProject(project)
+                console.log(project);
 
+              
+            }
            
         };
         fetchUsers();
