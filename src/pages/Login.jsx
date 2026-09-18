@@ -4,11 +4,11 @@ import './Login.css';
 
 export default function Login(){
 
-    const {login} = useAuth()
+    const {login, user} = useAuth()
 
     const navigate= useNavigate();
 
-   function submitForm(formdata){
+   async function submitForm(formdata){
      const email= formdata.get("email");
      const password = formdata.get("password");
      const role= formdata.get("role")
@@ -19,11 +19,15 @@ export default function Login(){
         return;
     }
      
-    const isLogin= login(email, password, role);
+    const isLogin= await login(email, password, role);
 
     if(isLogin){
-        
-        navigate('/dashboard')
+        if(user.role==='ADMIN'){
+           navigate('/admin/dashboard')
+        }
+        else if(user.role==='MEMBER'){
+           navigate('/user/dashboard')
+        }
     }
     
 

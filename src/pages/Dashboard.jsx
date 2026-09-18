@@ -6,7 +6,7 @@ export default function Dasboard(){
     return (
         <>
            <Navbar/>
-           <div class="dashboard">
+           <div className="dashboard">
               <Sidebar />
               <Maincontent />
            </div>

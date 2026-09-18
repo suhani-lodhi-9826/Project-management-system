@@ -8,6 +8,7 @@ import DashboardHome from './components/Admin/DashboardHome'
 import Projects from './components/Admin/Projects'
 import Users from './components/Admin/Users'
 import Teams from './components/Admin/Teams'
+import AddProject from './components/Admin/AddProject'
 
 function App() {
 
@@ -17,8 +18,8 @@ function App() {
   
        <Routes>
           <Route path='/login'  element={<Login />} />
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
+          <Route path="/admin/dashboard" element={
+            <ProtectedRoute allowedRole="ADMIN">
               <Dashboard />
             </ProtectedRoute>
           }>
@@ -26,6 +27,16 @@ function App() {
             <Route path="projects" element={<Projects/>}/>
             <Route path="users" element={<Users />} />
             <Route path="teams" element={<Teams />} />
+            <Route path="add-project" element={<AddProject/>} />
+            <Route path="edit-project/:id" element={<AddProject/>} />
+          </Route>
+
+          <Route path="/user/dashboard" element={
+            <ProtectedRoute allowedRole="MEMBER">
+              <Dashboard />
+            </ProtectedRoute>
+          }>
+            <Route index element={<DashboardHome/>} />
           </Route>
        </Routes>
 

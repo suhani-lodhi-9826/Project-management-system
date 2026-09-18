@@ -1,402 +1,456 @@
 {
-    "users":[
-  {
-    "id": 1,
-    "email": "admin@test.com",
-    "password": "123456",
-    "role": "ADMIN"
-  },
-  {
-    "id": 2,
-    "email": "user@test.com",
-    "password": "123456",
-    "role": "MEMBER"
-  },
-  {
-    "id": 3,
-    "email": "jsmith@test.com",
-    "password": "123456",
-    "role": "MEMBER"
-  },
-  {
-    "id": 4,
-    "email": "moderator@test.com",
-    "password": "123456",
-    "role": "MODERATOR"
-  },
-  {
-    "id": 5,
-    "email": "aturner@test.com",
-    "password": "123456",
-    "role": "MEMBER"
-  },
-  {
-    "id": 6,
-    "email": "superadmin@test.com",
-    "password": "123456",
-    "role": "ADMIN"
-  },
-  {
-    "id": 7,
-    "email": "rpatel@test.com",
-    "password": "123456",
-    "role": "MEMBER"
-  },
-  {
-    "id": 8,
-    "email": "guest1@test.com",
-    "password": "123456",
-    "role": "GUEST"
-  },
-  {
-    "id": 9,
-    "email": "klee@test.com",
-    "password": "123456",
-    "role": "MODERATOR"
-  },
-  {
-    "id": 10,
-    "email": "mbrown@test.com",
-    "password": "123456",
-    "role": "MEMBER"
-  }
-],
-
-"projects": [
-    
-  {
-    "id": 1,
-    "name": "Website Redesign",
-    "description": "Redesign company website",
-    "status": "IN_PROGRESS",
-    "priority": "HIGH",
-    "startDate": "2026-09-01",
-    "dueDate": "2026-10-01",
-    "members": [1, 2, 3]
-  },
-  {
-    "id": 2,
-    "name": "Mobile App Launch",
-    "description": "Build and launch the iOS/Android app",
-    "status": "IN_PROGRESS",
-    "priority": "HIGH",
-    "startDate": "2026-08-15",
-    "dueDate": "2026-11-30",
-    "members": [4, 5, 6]
-  },
-  {
-    "id": 3,
-    "name": "API Migration",
-    "description": "Migrate legacy REST API to GraphQL",
-    "status": "TODO",
-    "priority": "MEDIUM",
-    "startDate": "2026-10-05",
-    "dueDate": "2026-12-15",
-    "members": [7, 8, 9]
-  },
-  {
-    "id": 4,
-    "name": "Customer Support Portal",
-    "description": "Build a self-service support portal",
-    "status": "TODO",
-    "priority": "MEDIUM",
-    "startDate": "2026-09-20",
-    "dueDate": "2026-11-10",
-    "members": [10, 1, 2]
-  },
-  {
-    "id": 5,
-    "name": "Internal Analytics Dashboard",
-    "description": "Create a dashboard for tracking team KPIs",
-    "status": "IN_PROGRESS",
-    "priority": "LOW",
-    "startDate": "2026-08-01",
-    "dueDate": "2026-09-25",
-    "members": [3, 4, 5]
-  },
-  {
-    "id": 6,
-    "name": "Payment Gateway Integration",
-    "description": "Integrate Stripe and PayPal support",
-    "status": "DONE",
-    "priority": "HIGH",
-    "startDate": "2026-06-01",
-    "dueDate": "2026-08-01",
-    "members": [6, 7, 8]
-  },
-  {
-    "id": 7,
-    "name": "Marketing Site Revamp",
-    "description": "Update landing pages and SEO content",
-    "status": "TODO",
-    "priority": "LOW",
-    "startDate": "2026-10-10",
-    "dueDate": "2026-11-20",
-    "members": [9, 10, 1]
-  },
-  {
-    "id": 8,
-    "name": "Security Audit",
-    "description": "Conduct full application security review",
-    "status": "IN_PROGRESS",
-    "priority": "HIGH",
-    "startDate": "2026-09-10",
-    "dueDate": "2026-10-20",
-    "members": [2, 3, 4]
-  },
-  {
-    "id": 9,
-    "name": "DevOps Pipeline Overhaul",
-    "description": "Set up CI/CD with automated testing",
-    "status": "DONE",
-    "priority": "MEDIUM",
-    "startDate": "2026-07-01",
-    "dueDate": "2026-08-15",
-    "members": [5, 6, 7]
-  },
-  {
-    "id": 10,
-    "name": "Onboarding Flow Redesign",
-    "description": "Improve new-user onboarding experience",
-    "status": "TODO",
-    "priority": "MEDIUM",
-    "startDate": "2026-10-01",
-    "dueDate": "2026-11-05",
-    "members": [8, 9, 10]
-  }
-],
-
-"tasks": [
-  {
-    "id": 101,
-    "projectId": 1,
-    "title": "Create wireframes",
-    "description": "Create initial website wireframes",
-    "status": "TODO",
-    "priority": "HIGH",
-    "assignedTo": 2,
-    "dueDate": "2026-09-20"
-  },
-  {
-    "id": 102,
-    "projectId": 1,
-    "title": "Design homepage mockup",
-    "description": "Design high-fidelity homepage mockup based on wireframes",
-    "status": "IN_PROGRESS",
-    "priority": "HIGH",
-    "assignedTo": 3,
-    "dueDate": "2026-09-25"
-  },
-  {
-    "id": 103,
-    "projectId": 1,
-    "title": "Set up staging environment",
-    "description": "Configure staging server for website redesign",
-    "status": "COMPLETED",
-    "priority": "MEDIUM",
-    "assignedTo": 1,
-    "dueDate": "2026-09-10"
-  },
-  {
-    "id": 104,
-    "projectId": 2,
-    "title": "Set up React Native project",
-    "description": "Initialize mobile app project structure",
-    "status": "COMPLETED",
-    "priority": "HIGH",
-    "assignedTo": 4,
-    "dueDate": "2026-08-25"
-  },
-  {
-    "id": 105,
-    "projectId": 2,
-    "title": "Build login screen",
-    "description": "Implement authentication UI for mobile app",
-    "status": "IN_PROGRESS",
-    "priority": "MEDIUM",
-    "assignedTo": 5,
-    "dueDate": "2026-09-15"
-  },
-  {
-    "id": 106,
-    "projectId": 2,
-    "title": "Integrate push notifications",
-    "description": "Add push notification support for iOS/Android",
-    "status": "TODO",
-    "priority": "MEDIUM",
-    "assignedTo": 6,
-    "dueDate": "2026-10-10"
-  },
-  {
-    "id": 107,
-    "projectId": 3,
-    "title": "Define GraphQL schema",
-    "description": "Draft schema for new GraphQL API",
-    "status": "TODO",
-    "priority": "HIGH",
-    "assignedTo": 7,
-    "dueDate": "2026-10-15"
-  },
-  {
-    "id": 108,
-    "projectId": 3,
-    "title": "Migrate user endpoints",
-    "description": "Convert REST user endpoints to GraphQL resolvers",
-    "status": "TODO",
-    "priority": "MEDIUM",
-    "assignedTo": 8,
-    "dueDate": "2026-11-01"
-  },
-  {
-    "id": 109,
-    "projectId": 3,
-    "title": "Write migration tests",
-    "description": "Add test coverage for migrated endpoints",
-    "status": "TODO",
-    "priority": "LOW",
-    "assignedTo": 9,
-    "dueDate": "2026-11-20"
-  },
-  {
-    "id": 110,
-    "projectId": 4,
-    "title": "Design ticket submission form",
-    "description": "Create UI for customer support ticket submission",
-    "status": "IN_PROGRESS",
-    "priority": "MEDIUM",
-    "assignedTo": 10,
-    "dueDate": "2026-09-30"
-  },
-  {
-    "id": 111,
-    "projectId": 4,
-    "title": "Build FAQ search",
-    "description": "Implement searchable FAQ section",
-    "status": "TODO",
-    "priority": "LOW",
-    "assignedTo": 1,
-    "dueDate": "2026-10-20"
-  },
-  {
-    "id": 112,
-    "projectId": 5,
-    "title": "Define KPI metrics",
-    "description": "Identify key metrics to display on dashboard",
-    "status": "COMPLETED",
-    "priority": "MEDIUM",
-    "assignedTo": 3,
-    "dueDate": "2026-08-10"
-  },
-  {
-    "id": 113,
-    "projectId": 5,
-    "title": "Build chart components",
-    "description": "Create reusable chart components for dashboard",
-    "status": "IN_PROGRESS",
-    "priority": "LOW",
-    "assignedTo": 4,
-    "dueDate": "2026-09-15"
-  },
-  {
-    "id": 114,
-    "projectId": 6,
-    "title": "Integrate Stripe API",
-    "description": "Add Stripe payment processing",
-    "status": "COMPLETED",
-    "priority": "HIGH",
-    "assignedTo": 6,
-    "dueDate": "2026-07-10"
-  },
-  {
-    "id": 115,
-    "projectId": 6,
-    "title": "Integrate PayPal API",
-    "description": "Add PayPal as a payment option",
-    "status": "COMPLETED",
-    "priority": "HIGH",
-    "assignedTo": 7,
-    "dueDate": "2026-07-25"
-  },
-  {
-    "id": 116,
-    "projectId": 7,
-    "title": "Audit current SEO performance",
-    "description": "Review existing SEO metrics and gaps",
-    "status": "TODO",
-    "priority": "LOW",
-    "assignedTo": 9,
-    "dueDate": "2026-10-25"
-  },
-  {
-    "id": 117,
-    "projectId": 7,
-    "title": "Rewrite landing page copy",
-    "description": "Update marketing copy for landing pages",
-    "status": "TODO",
-    "priority": "MEDIUM",
-    "assignedTo": 10,
-    "dueDate": "2026-11-10"
-  },
-  {
-    "id": 118,
-    "projectId": 8,
-    "title": "Run dependency vulnerability scan",
-    "description": "Scan all dependencies for known vulnerabilities",
-    "status": "IN_PROGRESS",
-    "priority": "HIGH",
-    "assignedTo": 2,
-    "dueDate": "2026-09-18"
-  },
-  {
-    "id": 119,
-    "projectId": 8,
-    "title": "Review authentication flow",
-    "description": "Audit auth flow for security gaps",
-    "status": "TODO",
-    "priority": "HIGH",
-    "assignedTo": 3,
-    "dueDate": "2026-10-05"
-  },
-  {
-    "id": 120,
-    "projectId": 9,
-    "title": "Set up CI pipeline",
-    "description": "Configure automated build and test pipeline",
-    "status": "COMPLETED",
-    "priority": "MEDIUM",
-    "assignedTo": 5,
-    "dueDate": "2026-07-20"
-  },
-  {
-    "id": 121,
-    "projectId": 9,
-    "title": "Add automated deployment",
-    "description": "Set up CD to staging and production",
-    "status": "COMPLETED",
-    "priority": "HIGH",
-    "assignedTo": 6,
-    "dueDate": "2026-08-10"
-  },
-  {
-    "id": 122,
-    "projectId": 10,
-    "title": "Design onboarding flow wireframes",
-    "description": "Sketch new onboarding screens",
-    "status": "TODO",
-    "priority": "MEDIUM",
-    "assignedTo": 8,
-    "dueDate": "2026-10-15"
-  },
-  {
-    "id": 123,
-    "projectId": 10,
-    "title": "Implement onboarding tooltips",
-    "description": "Add contextual tooltips for new users",
-    "status": "TODO",
-    "priority": "LOW",
-    "assignedTo": 9,
-    "dueDate": "2026-11-01"
-  }
-]
-
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin User",
+      "email": "admin@test.com",
+      "password": "123456",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "name": "Test User",
+      "email": "user@test.com",
+      "password": "123456",
+      "role": "MEMBER"
+    },
+    {
+      "id": "3",
+      "name": "John Smith",
+      "email": "jsmith@test.com",
+      "password": "123456",
+      "role": "MEMBER"
+    },
+    {
+      "id": "4",
+      "name": "Moderator User",
+      "email": "moderator@test.com",
+      "password": "123456",
+      "role": "MODERATOR"
+    },
+    {
+      "id": "5",
+      "name": "Amy Turner",
+      "email": "aturner@test.com",
+      "password": "123456",
+      "role": "MEMBER"
+    },
+    {
+      "id": "6",
+      "name": "Super Admin",
+      "email": "superadmin@test.com",
+      "password": "123456",
+      "role": "ADMIN"
+    },
+    {
+      "id": "7",
+      "name": "Raj Patel",
+      "email": "rpatel@test.com",
+      "password": "123456",
+      "role": "MEMBER"
+    },
+    {
+      "id": "8",
+      "name": "Guest One",
+      "email": "guest1@test.com",
+      "password": "123456",
+      "role": "GUEST"
+    },
+    {
+      "id": "9",
+      "name": "Kevin Lee",
+      "email": "klee@test.com",
+      "password": "123456",
+      "role": "MODERATOR"
+    },
+    {
+      "id": "10",
+      "name": "Mia Brown",
+      "email": "mbrown@test.com",
+      "password": "123456",
+      "role": "MEMBER"
+    },
+    {
+      "id": "11",
+      "name": "Suhani Sharma",
+      "email": "suhani@test.com",
+      "password": "123456",
+      "role": "MEMBER"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Website Redesign",
+      "description": "Redesign company website",
+      "status": "IN_PROGRESS",
+      "priority": "HIGH",
+      "startDate": "2026-09-01",
+      "dueDate": "2026-10-01",
+      "members": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Mobile App Launch",
+      "description": "Build and launch the iOS/Android app",
+      "status": "IN_PROGRESS",
+      "priority": "HIGH",
+      "startDate": "2026-08-15",
+      "dueDate": "2026-11-30",
+      "members": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "3",
+      "name": "API Migration",
+      "description": "Migrate legacy REST API to GraphQL",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "startDate": "2026-10-05",
+      "dueDate": "2026-12-15",
+      "members": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Customer Support Portal",
+      "description": "Build a self-service support portal",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "startDate": "2026-09-20",
+      "dueDate": "2026-11-10",
+      "members": [
+        10,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Internal Analytics Dashboard",
+      "description": "Create a dashboard for tracking team KPIs",
+      "status": "IN_PROGRESS",
+      "priority": "LOW",
+      "startDate": "2026-08-01",
+      "dueDate": "2026-09-25",
+      "members": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Payment Gateway Integration",
+      "description": "Integrate Stripe and PayPal support",
+      "status": "DONE",
+      "priority": "HIGH",
+      "startDate": "2026-06-01",
+      "dueDate": "2026-08-01",
+      "members": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Marketing Site Revamp",
+      "description": "Update landing pages and SEO content",
+      "status": "TODO",
+      "priority": "LOW",
+      "startDate": "2026-10-10",
+      "dueDate": "2026-11-20",
+      "members": [
+        9,
+        10,
+        1
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Security Audit",
+      "description": "Conduct full application security review",
+      "status": "IN_PROGRESS",
+      "priority": "HIGH",
+      "startDate": "2026-09-10",
+      "dueDate": "2026-10-20",
+      "members": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "9",
+      "name": "DevOps Pipeline Overhaul",
+      "description": "Set up CI/CD with automated testing",
+      "status": "DONE",
+      "priority": "MEDIUM",
+      "startDate": "2026-07-01",
+      "dueDate": "2026-08-15",
+      "members": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Onboarding Flow Redesign",
+      "description": "Improve new-user onboarding experience",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "startDate": "2026-10-01",
+      "dueDate": "2026-11-05",
+      "members": [
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "101",
+      "projectId": 1,
+      "title": "Create wireframes",
+      "description": "Create initial website wireframes",
+      "status": "TODO",
+      "priority": "HIGH",
+      "assignedTo": 2,
+      "dueDate": "2026-09-20"
+    },
+    {
+      "id": "102",
+      "projectId": 1,
+      "title": "Design homepage mockup",
+      "description": "Design high-fidelity homepage mockup based on wireframes",
+      "status": "IN_PROGRESS",
+      "priority": "HIGH",
+      "assignedTo": 3,
+      "dueDate": "2026-09-25"
+    },
+    {
+      "id": "103",
+      "projectId": 1,
+      "title": "Set up staging environment",
+      "description": "Configure staging server for website redesign",
+      "status": "COMPLETED",
+      "priority": "MEDIUM",
+      "assignedTo": 1,
+      "dueDate": "2026-09-10"
+    },
+    {
+      "id": "104",
+      "projectId": 2,
+      "title": "Set up React Native project",
+      "description": "Initialize mobile app project structure",
+      "status": "COMPLETED",
+      "priority": "HIGH",
+      "assignedTo": 4,
+      "dueDate": "2026-08-25"
+    },
+    {
+      "id": "105",
+      "projectId": 2,
+      "title": "Build login screen",
+      "description": "Implement authentication UI for mobile app",
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM",
+      "assignedTo": 5,
+      "dueDate": "2026-09-15"
+    },
+    {
+      "id": "106",
+      "projectId": 2,
+      "title": "Integrate push notifications",
+      "description": "Add push notification support for iOS/Android",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "assignedTo": 6,
+      "dueDate": "2026-10-10"
+    },
+    {
+      "id": "107",
+      "projectId": 3,
+      "title": "Define GraphQL schema",
+      "description": "Draft schema for new GraphQL API",
+      "status": "TODO",
+      "priority": "HIGH",
+      "assignedTo": 7,
+      "dueDate": "2026-10-15"
+    },
+    {
+      "id": "108",
+      "projectId": 3,
+      "title": "Migrate user endpoints",
+      "description": "Convert REST user endpoints to GraphQL resolvers",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "assignedTo": 8,
+      "dueDate": "2026-11-01"
+    },
+    {
+      "id": "109",
+      "projectId": 3,
+      "title": "Write migration tests",
+      "description": "Add test coverage for migrated endpoints",
+      "status": "TODO",
+      "priority": "LOW",
+      "assignedTo": 9,
+      "dueDate": "2026-11-20"
+    },
+    {
+      "id": "110",
+      "projectId": 4,
+      "title": "Design ticket submission form",
+      "description": "Create UI for customer support ticket submission",
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM",
+      "assignedTo": 10,
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "111",
+      "projectId": 4,
+      "title": "Build FAQ search",
+      "description": "Implement searchable FAQ section",
+      "status": "TODO",
+      "priority": "LOW",
+      "assignedTo": 1,
+      "dueDate": "2026-10-20"
+    },
+    {
+      "id": "112",
+      "projectId": 5,
+      "title": "Define KPI metrics",
+      "description": "Identify key metrics to display on dashboard",
+      "status": "COMPLETED",
+      "priority": "MEDIUM",
+      "assignedTo": 3,
+      "dueDate": "2026-08-10"
+    },
+    {
+      "id": "113",
+      "projectId": 5,
+      "title": "Build chart components",
+      "description": "Create reusable chart components for dashboard",
+      "status": "IN_PROGRESS",
+      "priority": "LOW",
+      "assignedTo": 4,
+      "dueDate": "2026-09-15"
+    },
+    {
+      "id": "114",
+      "projectId": 6,
+      "title": "Integrate Stripe API",
+      "description": "Add Stripe payment processing",
+      "status": "COMPLETED",
+      "priority": "HIGH",
+      "assignedTo": 6,
+      "dueDate": "2026-07-10"
+    },
+    {
+      "id": "115",
+      "projectId": 6,
+      "title": "Integrate PayPal API",
+      "description": "Add PayPal as a payment option",
+      "status": "COMPLETED",
+      "priority": "HIGH",
+      "assignedTo": 7,
+      "dueDate": "2026-07-25"
+    },
+    {
+      "id": "116",
+      "projectId": 7,
+      "title": "Audit current SEO performance",
+      "description": "Review existing SEO metrics and gaps",
+      "status": "TODO",
+      "priority": "LOW",
+      "assignedTo": 9,
+      "dueDate": "2026-10-25"
+    },
+    {
+      "id": "117",
+      "projectId": 7,
+      "title": "Rewrite landing page copy",
+      "description": "Update marketing copy for landing pages",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "assignedTo": 10,
+      "dueDate": "2026-11-10"
+    },
+    {
+      "id": "118",
+      "projectId": 8,
+      "title": "Run dependency vulnerability scan",
+      "description": "Scan all dependencies for known vulnerabilities",
+      "status": "IN_PROGRESS",
+      "priority": "HIGH",
+      "assignedTo": 2,
+      "dueDate": "2026-09-18"
+    },
+    {
+      "id": "119",
+      "projectId": 8,
+      "title": "Review authentication flow",
+      "description": "Audit auth flow for security gaps",
+      "status": "TODO",
+      "priority": "HIGH",
+      "assignedTo": 3,
+      "dueDate": "2026-10-05"
+    },
+    {
+      "id": "120",
+      "projectId": 9,
+      "title": "Set up CI pipeline",
+      "description": "Configure automated build and test pipeline",
+      "status": "COMPLETED",
+      "priority": "MEDIUM",
+      "assignedTo": 5,
+      "dueDate": "2026-07-20"
+    },
+    {
+      "id": "121",
+      "projectId": 9,
+      "title": "Add automated deployment",
+      "description": "Set up CD to staging and production",
+      "status": "COMPLETED",
+      "priority": "HIGH",
+      "assignedTo": 6,
+      "dueDate": "2026-08-10"
+    },
+    {
+      "id": "122",
+      "projectId": 10,
+      "title": "Design onboarding flow wireframes",
+      "description": "Sketch new onboarding screens",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "assignedTo": 8,
+      "dueDate": "2026-10-15"
+    },
+    {
+      "id": "123",
+      "projectId": 10,
+      "title": "Implement onboarding tooltips",
+      "description": "Add contextual tooltips for new users",
+      "status": "TODO",
+      "priority": "LOW",
+      "assignedTo": 9,
+      "dueDate": "2026-11-01"
+    }
+  ]
+  
 }
