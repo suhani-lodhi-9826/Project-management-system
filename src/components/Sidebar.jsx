@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext"
 import './Sidebar.css'
 
@@ -8,16 +9,16 @@ export default function Sidebar(){
           <section class="sidebar">
             { user.role==='ADMIN' &&   
              <ul>
-                <li>dashboard</li>
-                <li>Projects</li>
-                <li>Users</li>
-                <li>Teams</li>
+                <li> <NavLink to="/dashboard" end>Dashboard</NavLink> </li>
+                <li> <NavLink to="/dashboard/Projects">Projects</NavLink></li>
+                <li> <NavLink to="/dashboard/Users">Users</NavLink></li>
+                <li> <NavLink to="/dashboard/teams">Teams</NavLink></li>
              </ul>}
 
              {   user.role==='MEMBER' && 
              <ul>
-                <li>dashboard</li>
-                <li>Projects</li>
+                 <li> <NavLink to="/dashboard">Dashboard</NavLink> </li>
+                <li> <NavLink to="/dashboard/Projects">Projects</NavLink></li>
              </ul>}
           </section>
         </>

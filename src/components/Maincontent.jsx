@@ -1,7 +1,11 @@
+import { Outlet } from "react-router-dom";
+
 export default function Maincontent(){
     return (
         <>
-          <h1>main content</h1>
+          <div className="main-content">
+            <Outlet />
+          </div>
         </>
     )
 }
