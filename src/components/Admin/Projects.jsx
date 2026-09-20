@@ -1,32 +1,17 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useProjects } from '../../context/ProjectContext'
 
 export default function Projects() {
-    const [projects, setProjects] = useState(null)
+    const {projects, deleteProject} = useProjects();
 
     const navigate = useNavigate()
-    useEffect(() => {
-        async function fetchData() {
-            let data = await fetch('http://localhost:3000/projects')
-            data = await data.json();
-            setProjects(data);
-        }
-
-        fetchData();
-        console.log("useeffect of project")
-    }, [])
-
+  
     const calculateSummary = useMemo((status) => {
         return
     })
 
-    async function deleteProject(id) {
-        await fetch("http://localhost:3000/projects/" + id, {
-            method: "delete"
-        })
-        const filteredProjects = projects.filter((p) => p.id !== id);
-        setProjects(filteredProjects);
-    }
+    
 
     async function editProject(id) {
         navigate("../edit-project/" + id)

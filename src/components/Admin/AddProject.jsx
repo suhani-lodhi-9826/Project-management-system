@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react"
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import { useProjects } from "../../context/ProjectContext";
 
 export default function AddProject() {
     const projectId = useParams().id;
@@ -7,24 +9,24 @@ export default function AddProject() {
     console.log(location);
     const editpage = "/admin/dashboard/edit-project/2";
     const addpage = "/admin/dashboard/add-project";
-    console.log(projectId);
-    const [users, setUsers] = useState([])
+    const navigate = useNavigate();
+    const {allUser}= useAuth();
+    const {addProject, addTasks} = useProjects();
     const [tasks, setTasks] = useState([])
-    const [loadingUsers, setLoadingUsers] = useState(true);
     const [currProject, setCurrProject] = useState(null)
 
     useEffect(() => {
         const fetchUsers = async () => {
-            try {
-                const res = await fetch("http://localhost:3000/users");
-                const data = await res.json();
-                setUsers(data);
+            // try {
+            //     const res = await fetch("http://localhost:3000/users");
+            //     const data = await res.json();
+            //     setUsers(data);
 
-            } catch (err) {
-                console.error("Failed to fetch users", err);
-            } finally {
-                setLoadingUsers(false);
-            }
+            // } catch (err) {
+            //     console.error("Failed to fetch users", err);
+            // } finally {
+            //     setLoadingUsers(false);
+            // }
 
             if(projectId){
                 let project = await fetch("http://localhost:3000/projects/"+projectId);
@@ -69,57 +71,19 @@ export default function AddProject() {
             members: [...tasks.map((t) => t.assignedTo)]
         }
 
-
-        let projectresponse = await fetch("http://localhost:3000/projects", {
-            method: 'Post',
-            body: JSON.stringify(project)
-        })
-
-        if (!projectresponse.ok) {
-            const errorData = await projectresponse.json().catch(() => null);
-            console.error("project creation failed:", projectresponse.status, errorData);
-            throw new Error(`Failed to create project: ${JSON.stringify(errorData)}`);
-        }
-        else {
-            console.log("project created")
-            projectresponse = await projectresponse.json()
-            console.log(projectresponse)
-        }
-
+        const projectresponse = await addProject(project);
 
 
         const allTask = tasks.map((t) => {
             return { ...t, status: "TODO", projectId: projectresponse.id }
         })
 
-        const taskResponse = await Promise.all(
-            allTask.map(async (task) => {
-                const res = await fetch("http://localhost:3000/tasks", {
-                    method: "post",
-                    body: JSON.stringify(task)
-                })
-
-                if (!res.ok) {
-                    const errorData = await res.json().catch(() => null);
-                    console.error("Task creation failed:", res.status, errorData);
-                    throw new Error(`Failed to create task: ${JSON.stringify(errorData)}`);
-                }
-                else {
-                    console.log("task created")
-                }
-
-                return res.json();
-            })
-        )
+        const taskResponse = addTasks(allTask);
     }
-    else if(location==editpage){
-
+     
+    navigate(-1);
+    
     }
-
-
-        setTasks([])
-    }
-
     return (
         <>
             <form action={handleSubmit}>
@@ -164,13 +128,14 @@ export default function AddProject() {
                         <select
                             value={task.assignedTo}
                             onChange={(e) => updateTask(index, "assignedTo", e.target.value)}
-                            disabled={loadingUsers}
+                            //disabled={loadingUsers}
                             required
                         >
                             <option value="">
-                                {loadingUsers ? "Loading users..." : "Select user"}
+                                {/* {loadingUsers ? "Loading users..." : "Select user"} */}
+                                Select user
                             </option>
-                            {users.map((user) => (
+                            {allUser.map((user) => (
                                 <option key={user.id} value={user.id}>
                                     {user.name}
                                 </option>
@@ -209,4 +174,4 @@ export default function AddProject() {
 
         </>
     )
-}
+    }
