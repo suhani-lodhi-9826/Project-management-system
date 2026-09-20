@@ -45,13 +45,38 @@ export function AuthProvider({children}){
      return true
     }
 
+    async function addUser(name, email, password, role){
+        const newUser = {
+            name,
+            email,
+            password,
+            role
+        };
+         let response = await fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newUser)
+        });
+
+        if (response.ok) {
+            alert('User added successfully');
+            response = await response.json();
+            setAllUsers([...allUser, response]);
+            return {success:true};
+        }
+        else{
+            alert('Failed to add user');
+            return {success:false};
+        }
+        
+    }
 
     function logout(){
         localStorage.removeItem('user')
         setUser(null);
     }
 
-    let value={user,loading, allUser, login, logout};
+    let value={user,loading, allUser, login, logout, addUser};
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 

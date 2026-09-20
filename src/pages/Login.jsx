@@ -22,10 +22,10 @@ export default function Login(){
     const isLogin= await login(email, password, role);
 
     if(isLogin){
-        if(user.role==='ADMIN'){
+        if(user.role=='ADMIN'){
            navigate('/admin/dashboard')
         }
-        else if(user.role==='MEMBER'){
+        else if(user.role=='MEMBER'){
            navigate('/user/dashboard')
         }
     }

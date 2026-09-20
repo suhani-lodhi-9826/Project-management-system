@@ -5,11 +5,7 @@ import { useProjects } from '../../context/ProjectContext'
 export default function Projects() {
     const {projects, deleteProject} = useProjects();
 
-    const navigate = useNavigate()
-  
-    const calculateSummary = useMemo((status) => {
-        return
-    })
+    const navigate = useNavigate();
 
     
 
@@ -27,8 +23,8 @@ export default function Projects() {
             <th>{p.dueDate}</th>
             <th>{p.status}</th>
             <th>
-                <button onClick={() => editProject(p.id)}>Edit</button>
-                <button onClick={() => deleteProject(p.id)}>delete</button>
+                <button onClick={() => editProject(p.id)} className="btn-secondary">Edit</button>
+                <button onClick={() => deleteProject(p.id)} className="btn-danger" style={{marginLeft: 10}} >delete</button>
             </th>
         </tr>)
     }) : null;
@@ -36,13 +32,15 @@ export default function Projects() {
 
     return (
         <>
+            <div className="project-header">
             <h1>Projects</h1>
-            <button onClick={() => navigate('../add-project')}>Create new project</button>
-
-
-            <div className="summary">
-
+            <button onClick={() => navigate('../add-project')} className= "btn-primary">
+                Create new project
+            </button>
             </div>
+            <br />
+            <br />
+
 
             <table>
                 <thead>

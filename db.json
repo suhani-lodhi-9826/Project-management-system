@@ -26,7 +26,7 @@
       "name": "Moderator User",
       "email": "moderator@test.com",
       "password": "123456",
-      "role": "MODERATOR"
+      "role": "MEMBER"
     },
     {
       "id": "5",
@@ -37,10 +37,10 @@
     },
     {
       "id": "6",
-      "name": "Super Admin",
-      "email": "superadmin@test.com",
+      "name": "tennis",
+      "email": "tennis@test.com",
       "password": "123456",
-      "role": "ADMIN"
+      "role": "MEMBER"
     },
     {
       "id": "7",
@@ -61,7 +61,7 @@
       "name": "Kevin Lee",
       "email": "klee@test.com",
       "password": "123456",
-      "role": "MODERATOR"
+      "role": "MEMBER"
     },
     {
       "id": "10",
@@ -76,23 +76,16 @@
       "email": "suhani@test.com",
       "password": "123456",
       "role": "MEMBER"
+    },
+    {
+      "name": "Suhani Lodhi",
+      "email": "SUHANILODHI050@GMAIL.COM",
+      "password": "123456",
+      "role": "MEMBER",
+      "id": "Ahus4w68_6A"
     }
   ],
   "projects": [
-    {
-      "id": "1",
-      "name": "Website Redesign",
-      "description": "Redesign company website",
-      "status": "IN_PROGRESS",
-      "priority": "HIGH",
-      "startDate": "2026-09-01",
-      "dueDate": "2026-10-01",
-      "members": [
-        1,
-        2,
-        3
-      ]
-    },
     {
       "id": "2",
       "name": "Mobile App Launch",
@@ -125,7 +118,7 @@
       "id": "4",
       "name": "Customer Support Portal",
       "description": "Build a self-service support portal",
-      "status": "TODO",
+      "status": "DONE",
       "priority": "MEDIUM",
       "startDate": "2026-09-20",
       "dueDate": "2026-11-10",
@@ -221,36 +214,6 @@
     }
   ],
   "tasks": [
-    {
-      "id": "101",
-      "projectId": 1,
-      "title": "Create wireframes",
-      "description": "Create initial website wireframes",
-      "status": "TODO",
-      "priority": "HIGH",
-      "assignedTo": 2,
-      "dueDate": "2026-09-20"
-    },
-    {
-      "id": "102",
-      "projectId": 1,
-      "title": "Design homepage mockup",
-      "description": "Design high-fidelity homepage mockup based on wireframes",
-      "status": "IN_PROGRESS",
-      "priority": "HIGH",
-      "assignedTo": 3,
-      "dueDate": "2026-09-25"
-    },
-    {
-      "id": "103",
-      "projectId": 1,
-      "title": "Set up staging environment",
-      "description": "Configure staging server for website redesign",
-      "status": "COMPLETED",
-      "priority": "MEDIUM",
-      "assignedTo": 1,
-      "dueDate": "2026-09-10"
-    },
     {
       "id": "104",
       "projectId": 2,

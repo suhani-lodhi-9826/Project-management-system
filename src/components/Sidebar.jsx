@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext"
-import './Sidebar.css'
+
 
 export default function Sidebar(){
     const {user} = useAuth();
@@ -17,8 +17,8 @@ export default function Sidebar(){
 
              {   user.role==='MEMBER' && 
              <ul>
-                 <li> <NavLink to="/user/dashboard">Dashboard</NavLink> </li>
-                <li> <NavLink to="/user/dashboard/Projects">Projects</NavLink></li>
+                 <li> <NavLink to="/user/dashboard" end>Dashboard</NavLink> </li>
+                <li> <NavLink to="/user/dashboard/tasks">My Tasks</NavLink></li>
              </ul>}
           </section>
         </>

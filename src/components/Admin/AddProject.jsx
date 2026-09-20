@@ -86,23 +86,23 @@ export default function AddProject() {
     }
     return (
         <>
+            <h1>{location==addpage ? "Add Project" : "Edit Project"}</h1>
             <form action={handleSubmit}>
                 <input type="text" name="name" placeholder="Enter project name" required />
                 <textarea placeholder="Give discription about the project" name="description" required />
-                <label>Start date:
-                    <input type="date" name="startDate" required />
-                </label>
-                <label>Due date:
-                    <input type="date" name="dueDate" required />
-                </label>
-                <label >
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                Start date:<input type="date" name="startDate" required />
+    
+                Due date:<input type="date" name="dueDate" required />
+                
                     Set Priority
                     <select name="priority">
                         <option value="HIGH">High</option>
                         <option value="MEDIUM">Medium</option>
                         <option value="LOW">Low</option>
                     </select>
-                </label>
+                
+                </div>
                 <hr />
 
                 <button type="button" onClick={addTask}>Add Task</button>
@@ -159,16 +159,16 @@ export default function AddProject() {
                             <option value="HIGH">High</option>
                             <option value="MEDIUM">Medium</option>
                             <option value="LOW">Low</option>
-                        </select>title
+                        </select>
 
-                        <button type="button" onClick={() => removeTask(index)}>
+                        <button type="button" onClick={() => removeTask(index)} className="btn-danger">
                             Remove Task
                         </button>
                     </div>
                 ))}
 
 
-                <button type="submit">Create Project</button>
+                <button type="submit" className="btn-primary">Create Project</button>
             </form>
 
 

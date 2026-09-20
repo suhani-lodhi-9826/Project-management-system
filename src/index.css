@@ -74,3 +74,703 @@ input {
 button {
   cursor: pointer;
 }
+
+/* =========================================================
+   GLOBAL BUTTONS
+   ========================================================= */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+/* =========================
+   PRIMARY BUTTON
+   ========================= */
+
+.btn-primary,
+button.primary {
+    padding: 10px 18px;
+
+    background-color: var(--primary-color);
+    color: var(--text-light-color);
+
+    box-shadow: 0 2px 5px rgba(108, 74, 182, 0.18);
+}
+
+.btn-primary:hover,
+button.primary:hover {
+    background-color: var(--secondary-color);
+
+    box-shadow: 0 4px 10px rgba(108, 74, 182, 0.22);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   SECONDARY BUTTON
+   ========================= */
+
+.btn-secondary,
+button.secondary {
+    padding: 10px 18px;
+
+    background-color: var(--surface-color);
+    color: var(--primary-color);
+
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover,
+button.secondary:hover {
+    background-color: #f1ecf8;
+
+    color: var(--secondary-color);
+
+    border-color: var(--secondary-color);
+}
+
+
+/* =========================
+   SUCCESS BUTTON
+   ========================= */
+
+.btn-success,
+button.success {
+    padding: 10px 18px;
+
+    background-color: var(--success-color);
+    color: var(--text-light-color);
+}
+
+.btn-success:hover,
+button.success:hover {
+    background-color: #34794d;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   DANGER BUTTON
+   ========================= */
+
+.btn-danger,
+button.danger {
+    padding: 10px 18px;
+
+    background-color: var(--danger-color);
+    color: var(--text-light-color);
+}
+
+.btn-danger:hover,
+button.danger:hover {
+    background-color: #b54141;
+}
+
+
+/* =========================
+   WARNING BUTTON
+   ========================= */
+
+.btn-warning,
+button.warning {
+    padding: 10px 18px;
+
+    background-color: var(--warning-color);
+    color: var(--text-light-color);
+}
+
+.btn-warning:hover,
+button.warning:hover {
+    background-color: #c88c22;
+}
+
+
+/* =========================
+   DISABLED
+   ========================= */
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+form {
+    width: 100%;
+
+    padding: var(--space-xl);
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-sm);
+
+    margin-bottom: var(--space-lg);
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+label {
+    color: var(--text-dark-color);
+
+    font-size: var(--font-sm);
+    font-weight: var(--font-semibold);
+}
+
+.required {
+    margin-left: 3px;
+
+    color: var(--danger-color);
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+   ========================================================= */
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 11px 14px;
+
+    font-family: inherit;
+    font-size: var(--font-sm);
+
+    color: var(--text-dark-color);
+
+    background-color: var(--surface-color);
+
+    border: 1px solid #d8cee3;
+    border-radius: var(--radius-md);
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* =========================================================
+   INPUT PLACEHOLDER
+   ========================================================= */
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted-color);
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   INPUT HOVER
+   ========================================================= */
+
+input:not([type="checkbox"]):not([type="radio"]):hover,
+select:hover,
+textarea:hover {
+    border-color: #b8a5d4;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+
+    background-color: #fdfcff;
+
+    box-shadow:
+        0 0 0 3px rgba(108, 74, 182, 0.12);
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+select {
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   CHECKBOX / RADIO
+   ========================================================= */
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 16px;
+    height: 16px;
+
+    margin: 0;
+
+    accent-color: var(--primary-color);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM ERROR
+   ========================================================= */
+
+.input-error {
+    border-color: var(--danger-color) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(201, 76, 76, 0.10) !important;
+}
+
+.error-message {
+    margin-top: 2px;
+
+    color: var(--danger-color);
+
+    font-size: var(--font-xs);
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: var(--space-md);
+
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.table-container {
+    width: 100%;
+
+    margin-top: var(--space-lg);
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: var(--surface-color);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+thead {
+    background-color: #f1ecf8;
+}
+
+th {
+    padding: 14px 18px;
+
+    color: var(--secondary-color);
+
+    font-size: var(--font-sm);
+    font-weight: var(--font-semibold);
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+td {
+    padding: 15px 18px;
+
+    color: var(--text-dark-color);
+
+    font-size: var(--font-sm);
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid #eee8f2;
+}
+
+
+/* =========================================================
+   TABLE ROW
+   ========================================================= */
+
+tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+tbody tr:hover {
+    background-color: #fbf9fd;
+}
+
+
+/* Last row */
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   TABLE ALIGNMENT
+   ========================================================= */
+
+/* Status */
+
+th:nth-child(2),
+td:nth-child(2) {
+    text-align: center;
+}
+
+
+/* Priority */
+
+th:nth-child(3),
+td:nth-child(3) {
+    text-align: center;
+}
+
+
+/* Dates */
+
+th:nth-child(4),
+td:nth-child(4),
+th:nth-child(5),
+td:nth-child(5) {
+    text-align: center;
+}
+
+
+/* Actions */
+
+th:last-child,
+td:last-child {
+    text-align: center;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 72px;
+
+    padding: 5px 10px;
+
+    border-radius: var(--radius-md);
+
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* TODO */
+
+.status-todo {
+    background-color: #f0eaf8;
+
+    color: var(--primary-color);
+}
+
+
+/* IN PROGRESS */
+
+.status-in_progress {
+    background-color: #fff4dd;
+
+    color: var(--warning-color);
+}
+
+
+/* DONE */
+
+.status-done {
+    background-color: #eaf5ee;
+
+    color: var(--success-color);
+}
+
+
+/* =========================================================
+   PRIORITY BADGES
+   ========================================================= */
+
+.priority {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 65px;
+
+    padding: 5px 10px;
+
+    border-radius: var(--radius-md);
+
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* HIGH */
+
+.priority-high {
+    background-color: #fceaea;
+
+    color: var(--danger-color);
+}
+
+
+/* MEDIUM */
+
+.priority-medium {
+    background-color: #fff4dd;
+
+    color: var(--warning-color);
+}
+
+
+/* LOW */
+
+.priority-low {
+    background-color: #eaf5ee;
+
+    color: var(--success-color);
+}
+
+
+/* =========================================================
+   TABLE ACTION BUTTONS
+   ========================================================= */
+
+.table-action {
+    padding: 7px 12px;
+
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+}
+
+.table-action.primary {
+    background-color: var(--primary-color);
+    color: var(--text-light-color);
+}
+
+.table-action.success {
+    background-color: var(--success-color);
+    color: var(--text-light-color);
+}
+
+.table-action.secondary {
+    background-color: #f1ecf8;
+    color: var(--primary-color);
+
+    border: 1px solid #d8cce7;
+}
+
+.table-action:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card {
+    padding: var(--space-lg);
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+
+    border-color: #cfc0e2;
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.page-container {
+    width: 100%;
+
+    padding: var(--space-xl);
+}
+
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+.page-title {
+    margin-bottom: var(--space-sm);
+
+    color: var(--text-dark-color);
+
+    font-size: var(--font-xl);
+    font-weight: var(--font-semibold);
+}
+
+
+/* =========================================================
+   PAGE SUBTITLE
+   ========================================================= */
+
+.page-subtitle {
+    margin-bottom: var(--space-lg);
+
+    color: var(--text-muted-color);
+
+    font-size: var(--font-sm);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 180px;
+
+    padding: var(--space-xxl);
+
+    text-align: center;
+
+    color: var(--text-muted-color);
+
+    background-color: var(--surface-color);
+
+    border: 1px dashed var(--border-color);
+
+    border-radius: var(--radius-lg);
+}

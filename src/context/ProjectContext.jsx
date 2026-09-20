@@ -108,9 +108,15 @@ export function ProjectProvider({ children }) {
 
 
     const getProjectsByUser = useCallback(
-        (userId) => projects.filter((p) => p.members.includes(userId)),
-        [projects]
-    );
+    (userId) => {
+        return projects.filter((project) =>
+            project.members.some(
+                (memberId) => String(memberId) === String(userId)
+            )
+        );
+    },
+    [projects]
+);
 
     const addTasks = useCallback(async (allTasks) => {
         await Promise.all(
@@ -137,6 +143,53 @@ export function ProjectProvider({ children }) {
 
     }, [])
 
+
+    const changeProjectStatus = useCallback(
+    async (projectId, newStatus) => {
+        try {
+            const response = await fetch(
+                `http://localhost:3000/projects/${projectId}`,
+                {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        status: newStatus
+                    })
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error("Failed to update project status");
+            }
+
+            const updatedProject = await response.json();
+
+            setProjects((prev) =>
+                prev.map((project) =>
+                    project.id === projectId
+                        ? updatedProject
+                        : project
+                )
+            );
+
+            return updatedProject;
+        } catch (error) {
+            console.error("Failed to change project status:", error);
+            throw error;
+        }
+    },
+    []
+);
+
+
+const getTasksByProjectId = useCallback(
+    (projectId) => {
+        return tasks.filter((task) => task.projectId === projectId);
+    },
+    [tasks]
+);
 
     const summary = useMemo(()=>{
           const totalProjects = projects;
@@ -172,9 +225,11 @@ export function ProjectProvider({ children }) {
             updateProject,
             deleteProject,
             getProjectsByUser,
-            addTasks
+            addTasks,
+            changeProjectStatus,
+            getTasksByProjectId
         }),
-        [projects, loading, summary, addProject, updateProject, deleteProject, getProjectsByUser, addTasks]
+        [projects, loading, summary, addProject, updateProject, deleteProject, getProjectsByUser, addTasks, changeProjectStatus, getTasksByProjectId]
     );
 
     return <ProjectContext.Provider value={value}>{children}</ProjectContext.Provider>;

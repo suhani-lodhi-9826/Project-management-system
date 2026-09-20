@@ -9,6 +9,8 @@ import Projects from './components/Admin/Projects'
 import Users from './components/Admin/Users'
 import Teams from './components/Admin/Teams'
 import AddProject from './components/Admin/AddProject'
+import Dashboardhome from './components/Member/Dashboardhome'
+import Task from './components/Member/Task'
 
 function App() {
 
@@ -36,7 +38,8 @@ function App() {
               <Dashboard />
             </ProtectedRoute>
           }>
-            <Route index element={<DashboardHome/>} />
+            <Route index element={<Dashboardhome />}/>
+            <Route path="tasks" element={<Task/>}/>
           </Route>
        </Routes>
 
