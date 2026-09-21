@@ -76,7 +76,11 @@ export function AuthProvider({children}){
         setUser(null);
     }
 
-    let value={user,loading, allUser, login, logout, addUser};
+    function getUserById(id){
+       return allUser.filter((u)=> u.id==id);
+    }
+
+    let value={user,loading, allUser, login, logout, addUser, getUserById};
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 

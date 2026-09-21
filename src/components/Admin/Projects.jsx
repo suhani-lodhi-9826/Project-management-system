@@ -28,7 +28,7 @@ export default function Projects() {
             </td>
             <th>
                 <button onClick={() => editProject(p.id)} className="btn-secondary">View</button>
-                <button onClick={() => deleteProject(p.id)} className="btn-danger" style={{ marginLeft: 10 }} >delete</button>
+                <button onClick={() => deleteProject(p.id)} className="btn-danger" style={{ marginLeft: 10 }} >Delete</button>
             </th>
         </tr>)
     }) : null;

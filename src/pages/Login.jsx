@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import './Login.css';
 
 export default function Login(){
 
@@ -22,10 +21,10 @@ export default function Login(){
     const isLogin= await login(email, password, role);
 
     if(isLogin){
-        if(user.role=='ADMIN'){
+        if(role=='ADMIN'){
            navigate('/admin/dashboard')
         }
-        else if(user.role=='MEMBER'){
+        else if(role=='MEMBER'){
            navigate('/user/dashboard')
         }
     }

@@ -5,41 +5,14 @@ import { useProjects } from "../../context/ProjectContext";
 
 export default function AddProject() {
     const projectId = useParams().id;
-    const location = useLocation().pathname;
-    console.log(location);
-    const editpage = "/admin/dashboard/edit-project/2";
-    const addpage = "/admin/dashboard/add-project";
+    console.log(projectId)
     const navigate = useNavigate();
     const {allUser}= useAuth();
-    const {addProject, addTasks} = useProjects();
-    const [tasks, setTasks] = useState([])
-    const [currProject, setCurrProject] = useState(null)
+    const {addProject, addTasks, getProjectById, getTasksByProjectId, deleteTaskById, editProject, editTask, addOneTask} = useProjects();
+    const [tasks, setTasks] = useState(projectId ? getTasksByProjectId(projectId): [])
+    const projectData = projectId ? getProjectById(projectId)[0] : null;
+    const taskData = projectId ? getTasksByProjectId(projectId) : null;
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            // try {
-            //     const res = await fetch("http://localhost:3000/users");
-            //     const data = await res.json();
-            //     setUsers(data);
-
-            // } catch (err) {
-            //     console.error("Failed to fetch users", err);
-            // } finally {
-            //     setLoadingUsers(false);
-            // }
-
-            if(projectId){
-                let project = await fetch("http://localhost:3000/projects/"+projectId);
-                project= await project.json();
-                setCurrProject(project)
-                console.log(project);
-
-              
-            }
-           
-        };
-        fetchUsers();
-    }, []);
 
 
     const addTask = () => {
@@ -49,8 +22,11 @@ export default function AddProject() {
         ]);
     };
 
+
+
     const removeTask = (index) => {
         setTasks(tasks.filter((_, i) => i !== index));
+
     };
 
     const updateTask = (index, field, value) => {
@@ -59,9 +35,17 @@ export default function AddProject() {
         setTasks(updated);
     };
 
+    async function deleteTask(id){
+       const check = confirm("Are you sure you want to delete this task?")
+       if(check){
+          deleteTaskById(id);
+          setTasks(tasks.filter((t)=> t.id != id));
+       }
+    }
+
 
     const handleSubmit = async (formdata) => {
-        if(location==addpage){
+        if(!projectId){
         const projectData = Object.fromEntries(formdata.entries());
         console.log(projectData)
         console.log(tasks)
@@ -81,23 +65,42 @@ export default function AddProject() {
 
         const taskResponse = addTasks(allTask);
     }
+    else{
+        console.log("edit task called")
+    //     const projectData = Object.fromEntries(formdata.entries());
+       
+        
+    //    for(let i=0; i<tasks.length; i++){
+    //     if(tasks[i].id){
+    //         await editTask(tasks[i].id, tasks[i])
+    //     }
+    //     else{
+    //         const res = await addOneTask(task[i])
+    //         projectData.members.push(task[i].assignedTo);
+    //     }
+    //    }
+
+    //      await editProject(projectId, projectData);
+    //    console.log("task edited")
+        
+    }
      
     navigate(-1);
     
     }
     return (
         <div className="page">
-            <h1 className="page-title">{location==addpage ? "Add Project" : "Edit Project"}</h1>
+            <h1 className="page-title">{projectId ? "Edit Project" : "Add Project"}</h1>
             <form action={handleSubmit}>
-                <input type="text" name="name" placeholder="Enter project name" required />
-                <textarea placeholder="Give discription about the project" name="description" required />
+                <input type="text" name="name" placeholder="Enter project name" value={projectData && projectData.name} required />
+                <textarea placeholder="Give discription about the project" name="description" value={projectData && projectData.description} required />
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
-                Start date:<input type="date" name="startDate" required />
+                Start date:<input type="date" name="startDate" value={projectData && projectData.startDate } required />
     
-                Due date:<input type="date" name="dueDate" required />
+                Due date:<input type="date" name="dueDate" value={projectData && projectData.dueDate} required />
                 
                     Set Priority
-                    <select name="priority">
+                    <select name="priority" value={projectData && projectData.priority}>
                         <option value="HIGH">High</option>
                         <option value="MEDIUM">Medium</option>
                         <option value="LOW">Low</option>
@@ -164,14 +167,14 @@ export default function AddProject() {
                             <option value="LOW">Low</option>
                         </select>
 
-                        <button type="button" onClick={() => removeTask(index)} className="btn-danger">
+                        <button type="button" onClick={() => projectId? deleteTask(task.id): removeTask(index)} className="btn-danger">
                             Remove Task
                         </button>
                     </div>
                 ))}
 
-
-                <button type="submit" className="btn-primary">Create Project</button>
+             
+                {projectId? <button type="submit" className="btn-primary">Edit Project</button> :<button type="submit" className="btn-primary">Create Project</button>}
             </form>
 
 

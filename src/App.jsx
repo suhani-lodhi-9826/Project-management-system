@@ -11,6 +11,8 @@ import AddProject from './components/Admin/AddProject'
 import Dashboardhome from './components/Member/Dashboardhome'
 import Task from './components/Member/Task'
 import NotFound from './pages/NotFound'
+import ViewProject from './components/Member/ViewProject'
+import ViewTask from './components/Member/ViewTask'
 
 function App() {
 
@@ -39,6 +41,8 @@ function App() {
           }>
             <Route index element={<Dashboardhome />}/>
             <Route path="tasks" element={<Task/>}/>
+            <Route path="project/:id" element={<ViewProject/>} />
+            <Route path="task/:id" element={<ViewTask/>} />
           </Route>
 
           <Route path='/*' element={<NotFound />} /> 

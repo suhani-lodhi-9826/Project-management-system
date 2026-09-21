@@ -2,9 +2,14 @@ import Summarycards from "../models/Summarycards";
 import { useAuth } from "../../context/AuthContext";
 import { useProjects } from "../../context/ProjectContext";
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 export default function Dashboardhome() {
     const { user } = useAuth();
+
+    const navigate = useNavigate()
+
 
     const {
         getProjectsByUser,
@@ -48,6 +53,7 @@ export default function Dashboardhome() {
             project.status === "IN_PROGRESS"
     );
 
+
     return (
         <>
             <h1>Dashboard</h1>
@@ -80,7 +86,7 @@ export default function Dashboardhome() {
 
             </div>
 
-            <h2>
+            <h2 className="subtitle">
                 {selectedFilter === "ALL"
                     ? "My Projects"
                     : selectedFilter === "COMPLETED"
@@ -147,11 +153,10 @@ export default function Dashboardhome() {
                                     </button>
                                 )}
 
-                                {project.status === "DONE" && (
-                                    <button className="btn-primary">
+                                    <button className="btn-primary" onClick={() => navigate(`/user/dashboard/project/${project.id}`)}>
                                         View Project
                                     </button>
-                                )}
+                                
                             </td>
                         </tr>
                     ))}
