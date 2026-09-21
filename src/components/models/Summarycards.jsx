@@ -1,4 +1,4 @@
-import './Summarycard.css'
+
 export default function Summarycards(props){
     return (
         <>

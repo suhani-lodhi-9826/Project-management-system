@@ -35,7 +35,7 @@ export default function Dashboardhome() {
             );
         }
 
-        return true; // ALL
+        return true; 
     });
 
     const completedProjects = myProjects.filter(
@@ -52,31 +52,31 @@ export default function Dashboardhome() {
         <>
             <h1>Dashboard</h1>
 
-            <div>
+            <div className="summary-cards">
 
                 {/* TOTAL */}
-                <button onClick={() => setSelectedFilter("ALL")}>
+                <span onClick={() => setSelectedFilter("ALL")}>
                     <Summarycards
                         title="Total projects assigned"
                         value={myProjects.length}
                     />
-                </button>
+                </span>
 
                 {/* COMPLETED */}
-                <button onClick={() => setSelectedFilter("COMPLETED")}>
+                <span onClick={() => setSelectedFilter("COMPLETED")}>
                     <Summarycards
                         title="Total completed projects"
                         value={completedProjects.length}
                     />
-                </button>
+                </span>
 
                 {/* PENDING */}
-                <button onClick={() => setSelectedFilter("PENDING")}>
+                <span onClick={() => setSelectedFilter("PENDING")}>
                     <Summarycards
                         title="Total pending projects"
                         value={pendingProjects.length}
                     />
-                </button>
+                </span>
 
             </div>
 
@@ -105,8 +105,16 @@ export default function Dashboardhome() {
                     {filteredProjects.map((project) => (
                         <tr key={project.id}>
                             <td>{project.name}</td>
-                            <td>{project.status}</td>
-                            <td>{project.priority}</td>
+                           <td>
+                                <span className={`status status-${project.status.toLowerCase()}`}>
+                                     {project.status}
+                                </span>
+                            </td>
+                            <td>
+                                <span className= {project.priority ? `priority priority-${project.priority.toLowerCase()}` : ''}>
+                                    {project.priority}
+                                </span>
+                            </td>
                             <td>{project.startDate}</td>
                             <td>{project.dueDate}</td>
 
@@ -119,6 +127,7 @@ export default function Dashboardhome() {
                                                 "IN_PROGRESS"
                                             )
                                         }
+                                        className="btn-primary"
                                     >
                                         Start Project
                                     </button>
@@ -132,13 +141,14 @@ export default function Dashboardhome() {
                                                 "DONE"
                                             )
                                         }
+                                        className="btn-primary"
                                     >
                                         Mark as Done
                                     </button>
                                 )}
 
                                 {project.status === "DONE" && (
-                                    <button>
+                                    <button className="btn-primary">
                                         View Project
                                     </button>
                                 )}

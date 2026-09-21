@@ -6,12 +6,12 @@ import Summarycards from "../models/Summarycards";
 export default function DashboardHome() {
     const { summary, projects } = useProjects();
 
-    const [selected, setSelected] = useState(null);   // e.g. "doneProjects"
+    const [selected, setSelected] = useState(null);   
 
     const recentProjects = useMemo(() => {
         const source = selected ? summary[selected] : projects;
 
-        return [...source]                             // copy before sorting
+        return [...source]                             
             .sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
             .slice(0, 5);
     }, [projects, summary, selected]);
@@ -72,6 +72,10 @@ export default function DashboardHome() {
                     ))}
                 </tbody>
             </table>
+
+            {recentProjects.length===0 && 
+            <p>Np projects to display...</p>
+            }
         </>
     );
 }

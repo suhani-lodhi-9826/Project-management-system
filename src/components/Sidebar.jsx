@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext"
 
 
 export default function Sidebar(){
-    const {user} = useAuth();
+    const {user, logout} = useAuth();
     return (
         <>
           <section className="sidebar">
@@ -12,7 +12,6 @@ export default function Sidebar(){
                 <li> <NavLink to="/admin/dashboard" end>Dashboard</NavLink> </li>
                 <li> <NavLink to="/admin/dashboard/projects">Projects</NavLink></li>
                 <li> <NavLink to="/admin/dashboard/Users">Users</NavLink></li>
-                <li> <NavLink to="/admin/dashboard/teams">Teams</NavLink></li>
              </ul>}
 
              {   user.role==='MEMBER' && 
@@ -20,6 +19,10 @@ export default function Sidebar(){
                  <li> <NavLink to="/user/dashboard" end>Dashboard</NavLink> </li>
                 <li> <NavLink to="/user/dashboard/tasks">My Tasks</NavLink></li>
              </ul>}
+
+             <div className="logout">
+                <button onClick={logout} className="logout btn-danger">logout</button>
+             </div>
           </section>
         </>
     )

@@ -75,9 +75,7 @@ button {
   cursor: pointer;
 }
 
-/* =========================================================
-   GLOBAL BUTTONS
-   ========================================================= */
+
 
 button {
     font-family: inherit;
@@ -89,6 +87,7 @@ button {
 
     font-size: var(--font-sm);
     font-weight: var(--font-medium);
+    margin: 10px;
 
     transition:
         background-color 0.2s ease,
@@ -99,9 +98,6 @@ button {
 }
 
 
-/* =========================
-   PRIMARY BUTTON
-   ========================= */
 
 .btn-primary,
 button.primary {
@@ -123,9 +119,7 @@ button.primary:hover {
 }
 
 
-/* =========================
-   SECONDARY BUTTON
-   ========================= */
+
 
 .btn-secondary,
 button.secondary {
@@ -147,10 +141,6 @@ button.secondary:hover {
 }
 
 
-/* =========================
-   SUCCESS BUTTON
-   ========================= */
-
 .btn-success,
 button.success {
     padding: 10px 18px;
@@ -167,10 +157,6 @@ button.success:hover {
 }
 
 
-/* =========================
-   DANGER BUTTON
-   ========================= */
-
 .btn-danger,
 button.danger {
     padding: 10px 18px;
@@ -185,9 +171,7 @@ button.danger:hover {
 }
 
 
-/* =========================
-   WARNING BUTTON
-   ========================= */
+
 
 .btn-warning,
 button.warning {
@@ -202,10 +186,6 @@ button.warning:hover {
     background-color: #c88c22;
 }
 
-
-/* =========================
-   DISABLED
-   ========================= */
 
 button:disabled {
     cursor: not-allowed;
@@ -290,6 +270,7 @@ textarea {
     border-radius: var(--radius-md);
 
     outline: none;
+    margin: 10px;
 
     transition:
         border-color 0.2s ease,
@@ -298,9 +279,6 @@ textarea {
 }
 
 
-/* =========================================================
-   INPUT PLACEHOLDER
-   ========================================================= */
 
 input::placeholder,
 textarea::placeholder {
@@ -309,11 +287,6 @@ textarea::placeholder {
     opacity: 0.85;
 }
 
-
-/* =========================================================
-   INPUT HOVER
-   ========================================================= */
-
 input:not([type="checkbox"]):not([type="radio"]):hover,
 select:hover,
 textarea:hover {
@@ -321,9 +294,6 @@ textarea:hover {
 }
 
 
-/* =========================================================
-   INPUT FOCUS
-   ========================================================= */
 
 input:not([type="checkbox"]):not([type="radio"]):focus,
 select:focus,
@@ -336,21 +306,11 @@ textarea:focus {
         0 0 0 3px rgba(108, 74, 182, 0.12);
 }
 
-
-/* =========================================================
-   SELECT
-   ========================================================= */
-
 select {
     cursor: pointer;
 
     appearance: auto;
 }
-
-
-/* =========================================================
-   TEXTAREA
-   ========================================================= */
 
 textarea {
     min-height: 110px;
@@ -358,10 +318,6 @@ textarea {
     resize: vertical;
 }
 
-
-/* =========================================================
-   CHECKBOX / RADIO
-   ========================================================= */
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -376,9 +332,6 @@ input[type="radio"] {
 }
 
 
-/* =========================================================
-   FORM ERROR
-   ========================================================= */
 
 .input-error {
     border-color: var(--danger-color) !important;
@@ -396,9 +349,7 @@ input[type="radio"] {
 }
 
 
-/* =========================================================
-   FORM ACTIONS
-   ========================================================= */
+
 
 .form-actions {
     display: flex;
@@ -414,9 +365,6 @@ input[type="radio"] {
 }
 
 
-/* =========================================================
-   TABLE CONTAINER
-   ========================================================= */
 
 .table-container {
     width: 100%;
@@ -435,9 +383,6 @@ input[type="radio"] {
 }
 
 
-/* =========================================================
-   TABLE
-   ========================================================= */
 
 table {
     width: 100%;
@@ -448,9 +393,7 @@ table {
 }
 
 
-/* =========================================================
-   TABLE HEADER
-   ========================================================= */
+
 
 thead {
     background-color: #f1ecf8;
@@ -472,9 +415,7 @@ th {
 }
 
 
-/* =========================================================
-   TABLE BODY
-   ========================================================= */
+
 
 td {
     padding: 15px 18px;
@@ -488,10 +429,6 @@ td {
     border-bottom: 1px solid #eee8f2;
 }
 
-
-/* =========================================================
-   TABLE ROW
-   ========================================================= */
 
 tbody tr {
     transition: background-color 0.15s ease;
@@ -509,9 +446,6 @@ tbody tr:last-child td {
 }
 
 
-/* =========================================================
-   TABLE ALIGNMENT
-   ========================================================= */
 
 /* Status */
 
@@ -547,10 +481,6 @@ td:last-child {
 }
 
 
-/* =========================================================
-   STATUS BADGES
-   ========================================================= */
-
 .status {
     display: inline-flex;
     align-items: center;
@@ -570,9 +500,7 @@ td:last-child {
     white-space: nowrap;
 }
 
-
-/* TODO */
-
+/*TODO */
 .status-todo {
     background-color: #f0eaf8;
 
@@ -598,9 +526,6 @@ td:last-child {
 }
 
 
-/* =========================================================
-   PRIORITY BADGES
-   ========================================================= */
 
 .priority {
     display: inline-flex;
@@ -649,9 +574,6 @@ td:last-child {
 }
 
 
-/* =========================================================
-   TABLE ACTION BUTTONS
-   ========================================================= */
 
 .table-action {
     padding: 7px 12px;
@@ -682,9 +604,6 @@ td:last-child {
 }
 
 
-/* =========================================================
-   CARDS
-   ========================================================= */
 
 .card {
     padding: var(--space-lg);
@@ -696,6 +615,7 @@ td:last-child {
     border-radius: var(--radius-lg);
 
     box-shadow: var(--shadow-sm);
+    cursor: pointer;
 
     transition:
         transform 0.2s ease,
@@ -711,66 +631,8 @@ td:last-child {
     box-shadow: var(--shadow-md);
 }
 
-
-/* =========================================================
-   PAGE CONTAINER
-   ========================================================= */
-
-.page-container {
-    width: 100%;
-
-    padding: var(--space-xl);
-}
-
-
-/* =========================================================
-   PAGE TITLE
-   ========================================================= */
-
-.page-title {
-    margin-bottom: var(--space-sm);
-
-    color: var(--text-dark-color);
-
-    font-size: var(--font-xl);
-    font-weight: var(--font-semibold);
-}
-
-
-/* =========================================================
-   PAGE SUBTITLE
-   ========================================================= */
-
-.page-subtitle {
-    margin-bottom: var(--space-lg);
-
-    color: var(--text-muted-color);
-
-    font-size: var(--font-sm);
-}
-
-
-/* =========================================================
-   EMPTY STATE
-   ========================================================= */
-
-.empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 180px;
-
-    padding: var(--space-xxl);
-
-    text-align: center;
-
-    color: var(--text-muted-color);
-
-    background-color: var(--surface-color);
-
-    border: 1px dashed var(--border-color);
-
-    border-radius: var(--radius-lg);
+h1{
+    color: var(--secondary-color);
+    font-weight: 900;
+    font-size: 2.5rem;
 }

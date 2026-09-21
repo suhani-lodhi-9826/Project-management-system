@@ -24,7 +24,7 @@ export default function Users(){
             <input type="text" name="name" placeholder="Name" />
             <input type="email" name="email" placeholder="Email" />
             <input type="password" name="password" placeholder="Password" />
-            <button type="submit">Add new User</button>
+            <button type="submit" className="btn-primary">Add new User</button>
         </form>
 
         

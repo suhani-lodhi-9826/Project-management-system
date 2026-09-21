@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import { useProjects } from '../../context/ProjectContext'
 
 export default function Projects() {
-    const {projects, deleteProject} = useProjects();
+    const { projects, deleteProject } = useProjects();
 
     const navigate = useNavigate();
 
-    
+
 
     async function editProject(id) {
         navigate("../edit-project/" + id)
@@ -21,10 +21,14 @@ export default function Projects() {
             <th>{p.members.length}</th>
             <th>{p.startDate}</th>
             <th>{p.dueDate}</th>
-            <th>{p.status}</th>
+            <td>
+                <span className={`status status-${p.status.toLowerCase()}`}>
+                    {p.status}
+                </span>
+            </td>
             <th>
-                <button onClick={() => editProject(p.id)} className="btn-secondary">Edit</button>
-                <button onClick={() => deleteProject(p.id)} className="btn-danger" style={{marginLeft: 10}} >delete</button>
+                <button onClick={() => editProject(p.id)} className="btn-secondary">View</button>
+                <button onClick={() => deleteProject(p.id)} className="btn-danger" style={{ marginLeft: 10 }} >delete</button>
             </th>
         </tr>)
     }) : null;
@@ -33,10 +37,10 @@ export default function Projects() {
     return (
         <>
             <div className="project-header">
-            <h1>Projects</h1>
-            <button onClick={() => navigate('../add-project')} className= "btn-primary">
-                Create new project
-            </button>
+                <h1>Projects</h1>
+                <button onClick={() => navigate('../add-project')} className="btn-primary">
+                    Create new project
+                </button>
             </div>
             <br />
             <br />
@@ -57,6 +61,11 @@ export default function Projects() {
                     {projectElement}
                 </tbody>
             </table>
+
+            {
+                projects.length === 0 &&
+                <p>No projects to display...</p>
+            }
         </>
     )
 }

@@ -59,6 +59,7 @@ export default function AddProject() {
         setTasks(updated);
     };
 
+
     const handleSubmit = async (formdata) => {
         if(location==addpage){
         const projectData = Object.fromEntries(formdata.entries());
@@ -85,8 +86,8 @@ export default function AddProject() {
     
     }
     return (
-        <>
-            <h1>{location==addpage ? "Add Project" : "Edit Project"}</h1>
+        <div className="page">
+            <h1 className="page-title">{location==addpage ? "Add Project" : "Edit Project"}</h1>
             <form action={handleSubmit}>
                 <input type="text" name="name" placeholder="Enter project name" required />
                 <textarea placeholder="Give discription about the project" name="description" required />
@@ -103,14 +104,16 @@ export default function AddProject() {
                     </select>
                 
                 </div>
+                <br/>
                 <hr />
 
-                <button type="button" onClick={addTask}>Add Task</button>
+                <button type="button" onClick={addTask} className="btn-secondary" style={{margin : 10}} >Add Task</button>
                 {tasks.map((task, index) => (
                     <div key={index} style={{ border: "1px solid #ccc", padding: "10px", marginBottom: "10px" }}>
                         <h4>Task {index + 1}</h4>
 
                         <input
+
                             type="text"
                             placeholder="Task title"
                             value={task.title}
@@ -172,6 +175,6 @@ export default function AddProject() {
             </form>
 
 
-        </>
+        </div>
     )
     }

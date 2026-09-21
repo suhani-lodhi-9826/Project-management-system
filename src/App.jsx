@@ -7,10 +7,10 @@ import ProtectedRoute from './routes/ProtectedRoute'
 import DashboardHome from './components/Admin/DashboardHome'
 import Projects from './components/Admin/Projects'
 import Users from './components/Admin/Users'
-import Teams from './components/Admin/Teams'
 import AddProject from './components/Admin/AddProject'
 import Dashboardhome from './components/Member/Dashboardhome'
 import Task from './components/Member/Task'
+import NotFound from './pages/NotFound'
 
 function App() {
 
@@ -28,7 +28,6 @@ function App() {
             <Route index element={<DashboardHome/>} />
             <Route path="projects" element={<Projects/>}/>
             <Route path="users" element={<Users />} />
-            <Route path="teams" element={<Teams />} />
             <Route path="add-project" element={<AddProject/>} />
             <Route path="edit-project/:id" element={<AddProject/>} />
           </Route>
@@ -41,6 +40,8 @@ function App() {
             <Route index element={<Dashboardhome />}/>
             <Route path="tasks" element={<Task/>}/>
           </Route>
+
+          <Route path='/*' element={<NotFound />} /> 
        </Routes>
 
        

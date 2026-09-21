@@ -109,3 +109,12 @@
     flex: 1;
     padding: 20px;
 }
+
+
+.logout{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 0;
+}
