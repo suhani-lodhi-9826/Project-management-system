@@ -13,6 +13,8 @@ import Task from './components/Member/Task'
 import NotFound from './pages/NotFound'
 import ViewProject from './components/Member/ViewProject'
 import ViewTask from './components/Member/ViewTask'
+import UserDetails from './components/Admin/UserDetails'
+import Profile from './components/Member/Profile'
 
 function App() {
 
@@ -32,6 +34,7 @@ function App() {
             <Route path="users" element={<Users />} />
             <Route path="add-project" element={<AddProject/>} />
             <Route path="edit-project/:id" element={<AddProject/>} />
+            <Route path="user-details/:id" element={<UserDetails />} />
           </Route>
 
           <Route path="/user/dashboard" element={
@@ -41,6 +44,7 @@ function App() {
           }>
             <Route index element={<Dashboardhome />}/>
             <Route path="tasks" element={<Task/>}/>
+            <Route path="profile" element={<Profile />} />
             <Route path="project/:id" element={<ViewProject/>} />
             <Route path="task/:id" element={<ViewTask/>} />
           </Route>

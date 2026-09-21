@@ -55,7 +55,7 @@ export default function DashboardHome() {
                     {recentProjects.map((p) => (
                         <tr key={p.id}>
                             <td>{p.name}</td>
-                            <td>{p.members.length}</td>
+                            <td>{p.members?.length || 0}</td>
                             <td>{p.startDate}</td>
                             <td>{p.dueDate}</td>
                             <td>

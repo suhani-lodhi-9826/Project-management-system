@@ -77,7 +77,7 @@ export function ProjectProvider({ children }) {
         console.log(deletetasks);
         await Promise.all(
             deletetasks.map(async (taskId) => {
-                const res = await fetch(API_URL_TASKS + "/" + taskId, {
+                const res = await fetch(API_URL_TASKS  + taskId, {
                     method: "delete"
                 })
 
@@ -102,7 +102,7 @@ export function ProjectProvider({ children }) {
 
         await deleteTaskByProjectId(id);
 
-        await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+        await fetch(`${API_URL}${id}`, { method: "DELETE" });
         setProjects((prev) => prev.filter((p) => p.id !== id));
     }, [projects, deleteTaskByProjectId]);
 
@@ -305,7 +305,7 @@ const addOneTask = useCallback(async (data) =>{
 
     if(res.ok){
             res = await res.json();
-            setTasks((prev) => prev.map((p)=> p.id==id? res : p));
+            setTasks((prev) => [...prev, res]);
             console.log("task created")
             
          }

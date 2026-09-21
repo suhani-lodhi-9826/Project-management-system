@@ -13,8 +13,9 @@ export default function ViewProject(){
     if (!project) return <p>Project not found.</p>;
 
     return (
+        <>
+        <h1>Project details</h1>
         <div className="project-card card">
-            <h1>Project details</h1>
             <h2>Project-Title : {project.name}</h2>
             <p>Project-description : {project.description}</p>
             <p>Start-Date : {project.startDate}</p>
@@ -33,5 +34,6 @@ export default function ViewProject(){
                 })}
             </div>
         </div>
+        </>
     );
 }

@@ -6,7 +6,8 @@ export default function Users(){
     const navigate = useNavigate();
 
     const {allUser, addUser} = useAuth();
-    const {getProjectByUserId} = useProjects();
+    const {getProjectsByUser} = useProjects();
+
 
 
    
@@ -37,13 +38,49 @@ export default function Users(){
         </form>
         <br/>
         <h2 className="subtitle">All Users</h2>
-        <div className="userCard">
+        {/* <div className="userCard">
         {
             allUser.map((u)=>{
                 return <UserCards key={u.id} user={u}/>
             })
         }
-        </div>
+        </div> */}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Total Projects</th>
+                    <th>Completed Projects</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {allUser.map((u) => (
+                    <tr key={u.id}>
+                        <td>{u.name}</td>
+                        <td>{u.email}</td>
+                        <td>{getProjectsByUser(u.id)?.length || 0}</td>
+                        <td>{getProjectsByUser(u.id)?.filter((p)=> p.status == 'DONE').length || 0}</td>
+                        <td>
+                            <button
+                                onClick={() =>
+                                    confirm("Are you sure you want to delete this user?") &&
+                                    deleteUser(u.id)
+                                }
+                                className="btn-danger"
+                            >
+                                Delete
+                            </button>
+                            <button className="btn-secondary" onClick={() => navigate("../user-details/" + u.id)}>
+                                View Details
+                            </button>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+
         </>
     )
 }

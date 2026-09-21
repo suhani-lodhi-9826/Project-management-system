@@ -176,7 +176,7 @@
     margin: 5px;
 }
 
-.user {
+/* .user {
     padding: var(--space-lg);
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
@@ -220,4 +220,4 @@
 
 .user h4:last-child {
     margin-bottom: 0;
-}
+} */

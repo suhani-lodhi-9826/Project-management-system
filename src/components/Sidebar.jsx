@@ -18,10 +18,11 @@ export default function Sidebar(){
              <ul>
                  <li> <NavLink to="/user/dashboard" end>Dashboard</NavLink> </li>
                 <li> <NavLink to="/user/dashboard/tasks">My Tasks</NavLink></li>
+                <li><NavLink to="/user/dashboard/profile">Profile</NavLink></li>
              </ul>}
 
              <div className="logout">
-                <button onClick={logout} className="logout btn-danger">logout</button>
+                <button onClick={() => confirm("Are you sure you want to logout?") && logout()} className="logout btn-danger">logout</button>
              </div>
           </section>
         </>

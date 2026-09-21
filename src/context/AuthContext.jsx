@@ -80,7 +80,36 @@ export function AuthProvider({children}){
        return allUser.filter((u)=> u.id==id);
     }
 
-    let value={user,loading, allUser, login, logout, addUser, getUserById};
+    function deleteUser(id){
+        let response = fetch(`http://localhost:3000/users/${id}`, {
+            method: 'DELETE'
+        });
+        if(response.ok){
+            alert("User deleted successfully");
+        }
+        setAllUsers(allUser.filter((u)=> u.id!=id));
+
+    }
+
+    async function updateUser(id, data){
+        let res = await fetch('http://localhost:3000/users/'+id,
+            {
+                method: "patch",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            })
+
+            if(res.ok){
+                res = await res.json();
+                setAllUsers((prev)=> prev.map((p)=> p.id==id ? res : p));
+                alert("Details updated")
+            }
+            else{
+                console.log("error ocurred during user detail update")
+            }
+    }
+
+    let value={user,loading, allUser, login, logout, addUser, getUserById, updateUser};
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 

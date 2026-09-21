@@ -83,6 +83,13 @@
       "password": "123456",
       "role": "MEMBER",
       "id": "Ahus4w68_6A"
+    },
+    {
+      "name": "tanu",
+      "email": "tanu@test.com",
+      "password": "123456",
+      "role": "MEMBER",
+      "id": "UjIt3Ddm8Z4"
     }
   ],
   "projects": [
@@ -90,6 +97,12 @@
       "name": "API Migration",
       "description": "Migrate legacy REST API to GraphQL",
       "startDate": "2026-10-05",
+      "status": "IN_PROGRESS",
+      "members": [
+        8,
+        9,
+        10
+      ],
       "dueDate": "2026-12-15",
       "priority": "MEDIUM",
       "id": "3"
@@ -194,16 +207,6 @@
     }
   ],
   "tasks": [
-    {
-      "id": "108",
-      "projectId": 3,
-      "title": "Migrate user endpoints",
-      "description": "Convert REST user endpoints to GraphQL resolvers",
-      "status": "TODO",
-      "priority": "MEDIUM",
-      "assignedTo": 8,
-      "dueDate": "2026-11-01"
-    },
     {
       "id": "110",
       "projectId": 4,
@@ -343,6 +346,30 @@
       "priority": "LOW",
       "assignedTo": 9,
       "dueDate": "2026-11-01"
+    },
+    {
+      "title": "muskan",
+      "description": "asdbajdfiajf",
+      "assignedTo": "6",
+      "dueDate": "2026-09-24",
+      "priority": "MEDIUM",
+      "id": "c_ZVPFSpvQ8"
+    },
+    {
+      "title": "muskan",
+      "description": "sdhafhioaejfikjedfkw",
+      "assignedTo": "5",
+      "dueDate": "2026-09-24",
+      "priority": "MEDIUM",
+      "id": "xc0OzDsOjSw"
+    },
+    {
+      "title": "muskan",
+      "description": "ndkjfopfko",
+      "assignedTo": "8",
+      "dueDate": "2026-09-24",
+      "priority": "MEDIUM",
+      "id": "oif1CeRCITE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
