@@ -56,7 +56,7 @@ export default function Tasks() {
                           {/* TOTAL */}
                           <span onClick={() => setSelectedFilter("ALL")}>
                               <Summarycards
-                                  title="Total projects assigned"
+                                  title="Total Task assigned"
                                   value={myProjects.length}
                               />
                           </span>
@@ -64,7 +64,7 @@ export default function Tasks() {
                           {/* COMPLETED */}
                           <span onClick={() => setSelectedFilter("COMPLETED")}>
                               <Summarycards
-                                  title="Total completed projects"
+                                  title="Total Completed Tasks"
                                   value={completedProjects.length}
                               />
                           </span>
@@ -72,7 +72,7 @@ export default function Tasks() {
                           {/* PENDING */}
                           <span onClick={() => setSelectedFilter("PENDING")}>
                               <Summarycards
-                                  title="Total pending projects"
+                                  title="Total pending Tasks"
                                   value={pendingProjects.length}
                               />
                           </span>
@@ -142,6 +142,20 @@ export default function Tasks() {
                                                   className="btn-primary"
                                               >
                                                   Mark as Done
+                                              </button>
+                                          )}
+
+                                          {project.status === "DONE" && (
+                                              <button
+                                                  onClick={() =>
+                                                      changeTaskStatus(
+                                                          project.id,
+                                                          "IN_PROGRESS"
+                                                      )
+                                                  }
+                                                  className="btn-primary"
+                                              >
+                                                  Mark as UnDone
                                               </button>
                                           )}
           

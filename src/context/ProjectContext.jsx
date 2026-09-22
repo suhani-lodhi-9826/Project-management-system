@@ -146,6 +146,10 @@ export function ProjectProvider({ children }) {
 
     const changeProjectStatus = useCallback(
         async (projectId, newStatus) => {
+            const check = confirm("Do you really want to change the status?");
+            if(!check){
+                return;
+            }
             try {
                 const response = await fetch(
                     `http://localhost:3000/projects/${projectId}`,
@@ -185,7 +189,12 @@ export function ProjectProvider({ children }) {
 
 
     const changeTaskStatus = useCallback(
+        
         async (projectId, newStatus) => {
+            const check = confirm("Do you really want to change the status?");
+            if(!check){
+                return;
+            }
             try {
                 const response = await fetch(
                     `http://localhost:3000/tasks/${projectId}`,
@@ -342,6 +351,19 @@ const addOneTask = useCallback(async (data) =>{
         return projects.filter((p) => p.id == id);
     }, [projects])
 
+
+    const getTaskByProjectIdAndUserId = useCallback((projectId, userId)=>{
+        return tasks.filter((t)=>{
+            return t.assignedTo==userId && t.projectId==projectId
+        })
+    },[tasks])
+
+    const getTaskById = useCallback((id)=>{
+        return tasks.filter((t)=>{
+            return t.id==id;
+        }, [tasks])
+    })
+
     const value = useMemo(
         () => ({
             projects,
@@ -361,9 +383,11 @@ const addOneTask = useCallback(async (data) =>{
             deleteTaskById,
             editProject,
             editTask,
-            addOneTask
+            addOneTask,
+            getTaskByProjectIdAndUserId,
+            getTaskById
         }),
-        [projects, loading, summary, tasks, addProject, updateProject, deleteProject, getProjectsByUser, addTasks, changeProjectStatus, getTasksByProjectId, getTasksByProjectId, changeTaskStatus, getProjectById, deleteTaskById, editProject, editTask, addOneTask]
+        [projects, loading, summary, tasks, addProject, updateProject, deleteProject, getProjectsByUser, addTasks, changeProjectStatus, getTasksByProjectId, getTasksByProjectId, changeTaskStatus, getProjectById, deleteTaskById, editProject, editTask, addOneTask, getTaskByProjectIdAndUserId, getTaskById]
     );
 
     return <ProjectContext.Provider value={value}>{children}</ProjectContext.Provider>;

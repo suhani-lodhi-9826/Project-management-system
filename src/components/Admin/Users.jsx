@@ -13,6 +13,10 @@ export default function Users(){
    
 
     async function addNewUser(e){
+        const check = confirm("Do you really want to add this user?");
+        if(!check){
+            return;
+        }
         e.preventDefault();
         const formData = new FormData(e.target);
         const name = formData.get('name');
@@ -57,7 +61,7 @@ export default function Users(){
             </thead>
             <tbody>
                 {allUser.map((u) => (
-                    <tr key={u.id}>
+                    u.role==='MEMBER'&&<tr key={u.id}>
                         <td>{u.name}</td>
                         <td>{u.email}</td>
                         <td>{getProjectsByUser(u.id)?.length || 0}</td>

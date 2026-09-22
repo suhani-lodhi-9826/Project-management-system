@@ -90,6 +90,13 @@
       "password": "123456",
       "role": "MEMBER",
       "id": "UjIt3Ddm8Z4"
+    },
+    {
+      "name": "Ishpreet",
+      "email": "ishpreet@test.com",
+      "password": "123456",
+      "role": "MEMBER",
+      "id": "QGlhX6I-GLI"
     }
   ],
   "projects": [
@@ -111,7 +118,7 @@
       "id": "4",
       "name": "Customer Support Portal",
       "description": "Build a self-service support portal",
-      "status": "DONE",
+      "status": "IN_PROGRESS",
       "priority": "MEDIUM",
       "startDate": "2026-09-20",
       "dueDate": "2026-11-10",
@@ -292,7 +299,7 @@
       "projectId": 8,
       "title": "Run dependency vulnerability scan",
       "description": "Scan all dependencies for known vulnerabilities",
-      "status": "DONE",
+      "status": "IN_PROGRESS",
       "priority": "HIGH",
       "assignedTo": 2,
       "dueDate": "2026-09-18"

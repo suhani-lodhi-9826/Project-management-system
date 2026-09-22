@@ -22,12 +22,11 @@ export default function Dashboardhome() {
         ? getProjectsByUser(user.id)
         : [];
 
-    // Recent projects
     const recentProjects = [...myProjects].sort(
         (a, b) => new Date(b.startDate) - new Date(a.startDate)
     );
 
-    // Projects according to selected card
+    
     const filteredProjects = recentProjects.filter((project) => {
         if (selectedFilter === "COMPLETED") {
             return project.status === "DONE";
@@ -153,8 +152,23 @@ export default function Dashboardhome() {
                                     </button>
                                 )}
 
-                                    <button className="btn-primary" onClick={() => navigate(`/user/dashboard/project/${project.id}`)}>
-                                        View Project
+                                {project.status === "DONE" && (
+                                    <button
+                                        onClick={() =>
+                
+                                            changeProjectStatus(
+                                                project.id,
+                                                "IN_PROGRESS"
+                                            )
+                                        }
+                                        className="btn-primary"
+                                    >
+                                        Mark as UnDone
+                                    </button>
+                                )}
+
+                                    <button className="btn-secondary" onClick={() => navigate(`/user/dashboard/project/${project.id}`)}>
+                                        View Details
                                     </button>
                                 
                             </td>

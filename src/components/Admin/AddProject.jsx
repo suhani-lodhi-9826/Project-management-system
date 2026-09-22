@@ -186,7 +186,7 @@ export default function AddProject() {
                 Select user
               </option>
               {allUser.map((user) => (
-                <option key={user.id} value={user.id}>
+                user.role==='MEMBER' && <option key={user.id} value={user.id}>
                   {user.name}
                 </option>
               ))}

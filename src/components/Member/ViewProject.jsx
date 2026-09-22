@@ -5,12 +5,16 @@ import { useMemo } from "react"
 
 export default function ViewProject(){
     const { id } = useParams();
-    const { getProjectById } = useProjects();
-    const { getUserById, allUser } = useAuth();
+    const { getProjectById, getTaskByProjectIdAndUserId } = useProjects();
+    const { getUserById, allUser, user } = useAuth();
 
     const project = getProjectById(id)?.[0];
+    const tasks = getTaskByProjectIdAndUserId(id, user.id);
+
+    console.log("taskksss" ,tasks)
 
     if (!project) return <p>Project not found.</p>;
+    if(!tasks) return <p>Tasks not found</p>
 
     return (
         <>
@@ -34,6 +38,21 @@ export default function ViewProject(){
                 })}
             </div>
         </div>
+<br/>
+<h2 className="subtitle">My Tasks</h2>
+        {
+            tasks.length > 0? tasks.map((t)=>{
+                return <div className="project-card card" key={t.id}>
+                    <h2>{t.title}</h2>
+                    <p>Description : {t.description}</p>
+                    <p>Due-date : {t.dueDate}</p>
+                    <p>Status : {t.status}</p>
+                    <p>Priority : {t.priority}</p>
+                </div>
+            }) :
+            <p>No tasks found...</p>
+        }
+        
         </>
     );
 }
