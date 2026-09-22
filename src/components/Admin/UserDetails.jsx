@@ -18,9 +18,11 @@ export default function UserDetails() {
         <h2>{user?.name}</h2>
         <p>Email: {user?.email}</p>
       </div>
+      <br/>
        <h2 className="subtitle">Projects</h2>
+       <br/>
        <div>
-       {projects?.map((project) =>{
+       {projects.length >0 ? projects.map((project) =>{
            return  <div className="project-card card">
             <h2>Project-Title : {project.name}</h2>
             <p>Project-description : {project.description}</p>
@@ -30,6 +32,7 @@ export default function UserDetails() {
             <p>Priority : {project.priority}</p>
         </div>
         })
+        : <p>No projects assigned...</p>
      }
      </div>
    </>

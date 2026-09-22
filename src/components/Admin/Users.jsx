@@ -36,7 +36,7 @@ export default function Users(){
             <div className="addUser">
             <input type="text" name="name" placeholder="Name" required/>
             <input type="email" name="email" placeholder="Email" required/>
-            <input type="password" name="password" placeholder="Password" required/>
+            <input type="text" name="password" placeholder="Password" required/>
             </div>
             <button type="submit" className="btn-primary">Add new User</button>
         </form>

@@ -8,375 +8,55 @@
       "role": "ADMIN"
     },
     {
-      "id": "2",
-      "name": "Test User",
-      "email": "user@test.com",
-      "password": "123456",
-      "role": "MEMBER"
-    },
-    {
-      "id": "3",
-      "name": "John Smith",
-      "email": "jsmith@test.com",
-      "password": "123456",
-      "role": "MEMBER"
-    },
-    {
-      "id": "4",
-      "name": "Moderator User",
-      "email": "moderator@test.com",
-      "password": "123456",
-      "role": "MEMBER"
-    },
-    {
-      "id": "5",
-      "name": "Amy Turner",
-      "email": "aturner@test.com",
-      "password": "123456",
-      "role": "MEMBER"
-    },
-    {
-      "id": "6",
-      "name": "tennis",
-      "email": "tennis@test.com",
-      "password": "123456",
-      "role": "MEMBER"
-    },
-    {
-      "id": "7",
-      "name": "Raj Patel",
-      "email": "rpatel@test.com",
-      "password": "123456",
-      "role": "MEMBER"
-    },
-    {
-      "id": "8",
-      "name": "Guest One",
-      "email": "guest1@test.com",
-      "password": "123456",
-      "role": "GUEST"
-    },
-    {
-      "id": "9",
-      "name": "Kevin Lee",
-      "email": "klee@test.com",
-      "password": "123456",
-      "role": "MEMBER"
-    },
-    {
-      "id": "10",
-      "name": "Mia Brown",
-      "email": "mbrown@test.com",
-      "password": "123456",
-      "role": "MEMBER"
-    },
-    {
-      "id": "11",
-      "name": "Suhani Sharma",
+      "name": "Suhani Lodhi",
       "email": "suhani@test.com",
       "password": "123456",
-      "role": "MEMBER"
+      "role": "MEMBER",
+      "id": "YyXlJsrkJl0"
     },
     {
-      "name": "Suhani Lodhi",
-      "email": "SUHANILODHI050@GMAIL.COM",
+      "name": "Ishpreet Singh",
+      "email": "Ishpreet@test.com",
       "password": "123456",
       "role": "MEMBER",
-      "id": "Ahus4w68_6A"
-    },
-    {
-      "name": "tanu",
-      "email": "tanu@test.com",
-      "password": "123456",
-      "role": "MEMBER",
-      "id": "UjIt3Ddm8Z4"
-    },
-    {
-      "name": "Ishpreet",
-      "email": "ishpreet@test.com",
-      "password": "123456",
-      "role": "MEMBER",
-      "id": "QGlhX6I-GLI"
+      "id": "ZlAx6C6TRvQ"
     }
   ],
   "projects": [
     {
-      "name": "API Migration",
-      "description": "Migrate legacy REST API to GraphQL",
-      "startDate": "2026-10-05",
-      "status": "IN_PROGRESS",
+      "name": "Project Mangement system",
+      "description": "Create a frontend Application using react to manage projects ",
+      "startDate": "2026-09-21",
+      "dueDate": "2026-09-24",
+      "priority": "HIGH",
       "members": [
-        8,
-        9,
-        10
+        "ZlAx6C6TRvQ",
+        "YyXlJsrkJl0"
       ],
-      "dueDate": "2026-12-15",
-      "priority": "MEDIUM",
-      "id": "3"
-    },
-    {
-      "id": "4",
-      "name": "Customer Support Portal",
-      "description": "Build a self-service support portal",
-      "status": "IN_PROGRESS",
-      "priority": "MEDIUM",
-      "startDate": "2026-09-20",
-      "dueDate": "2026-11-10",
-      "members": [
-        10,
-        1,
-        2
-      ]
-    },
-    {
-      "id": "5",
-      "name": "Internal Analytics Dashboard",
-      "description": "Create a dashboard for tracking team KPIs",
-      "status": "IN_PROGRESS",
-      "priority": "LOW",
-      "startDate": "2026-08-01",
-      "dueDate": "2026-09-25",
-      "members": [
-        3,
-        4,
-        5
-      ]
-    },
-    {
-      "id": "6",
-      "name": "Payment Gateway Integration",
-      "description": "Integrate Stripe and PayPal support",
       "status": "DONE",
-      "priority": "HIGH",
-      "startDate": "2026-06-01",
-      "dueDate": "2026-08-01",
-      "members": [
-        6,
-        7,
-        8
-      ]
-    },
-    {
-      "id": "7",
-      "name": "Marketing Site Revamp",
-      "description": "Update landing pages and SEO content",
-      "status": "TODO",
-      "priority": "LOW",
-      "startDate": "2026-10-10",
-      "dueDate": "2026-11-20",
-      "members": [
-        9,
-        10,
-        1
-      ]
-    },
-    {
-      "id": "8",
-      "name": "Security Audit",
-      "description": "Conduct full application security review",
-      "status": "DONE",
-      "priority": "HIGH",
-      "startDate": "2026-09-10",
-      "dueDate": "2026-10-20",
-      "members": [
-        2,
-        3,
-        4
-      ]
-    },
-    {
-      "id": "9",
-      "name": "DevOps Pipeline Overhaul",
-      "description": "Set up CI/CD with automated testing",
-      "status": "DONE",
-      "priority": "MEDIUM",
-      "startDate": "2026-07-01",
-      "dueDate": "2026-08-15",
-      "members": [
-        5,
-        6,
-        7
-      ]
-    },
-    {
-      "id": "10",
-      "name": "Onboarding Flow Redesign",
-      "description": "Improve new-user onboarding experience",
-      "status": "TODO",
-      "priority": "MEDIUM",
-      "startDate": "2026-10-01",
-      "dueDate": "2026-11-05",
-      "members": [
-        8,
-        9,
-        10
-      ]
+      "id": "0aKLW3nAil8"
     }
   ],
   "tasks": [
     {
-      "id": "110",
-      "projectId": 4,
-      "title": "Design ticket submission form",
-      "description": "Create UI for customer support ticket submission",
-      "status": "IN_PROGRESS",
-      "priority": "MEDIUM",
-      "assignedTo": 10,
-      "dueDate": "2026-09-30"
-    },
-    {
-      "id": "111",
-      "projectId": 4,
-      "title": "Build FAQ search",
-      "description": "Implement searchable FAQ section",
-      "status": "TODO",
-      "priority": "LOW",
-      "assignedTo": 1,
-      "dueDate": "2026-10-20"
-    },
-    {
-      "id": "112",
-      "projectId": 5,
-      "title": "Define KPI metrics",
-      "description": "Identify key metrics to display on dashboard",
-      "status": "COMPLETED",
-      "priority": "MEDIUM",
-      "assignedTo": 3,
-      "dueDate": "2026-08-10"
-    },
-    {
-      "id": "113",
-      "projectId": 5,
-      "title": "Build chart components",
-      "description": "Create reusable chart components for dashboard",
-      "status": "IN_PROGRESS",
-      "priority": "LOW",
-      "assignedTo": 4,
-      "dueDate": "2026-09-15"
-    },
-    {
-      "id": "114",
-      "projectId": 6,
-      "title": "Integrate Stripe API",
-      "description": "Add Stripe payment processing",
-      "status": "COMPLETED",
-      "priority": "HIGH",
-      "assignedTo": 6,
-      "dueDate": "2026-07-10"
-    },
-    {
-      "id": "115",
-      "projectId": 6,
-      "title": "Integrate PayPal API",
-      "description": "Add PayPal as a payment option",
-      "status": "COMPLETED",
-      "priority": "HIGH",
-      "assignedTo": 7,
-      "dueDate": "2026-07-25"
-    },
-    {
-      "id": "116",
-      "projectId": 7,
-      "title": "Audit current SEO performance",
-      "description": "Review existing SEO metrics and gaps",
-      "status": "TODO",
-      "priority": "LOW",
-      "assignedTo": 9,
-      "dueDate": "2026-10-25"
-    },
-    {
-      "id": "117",
-      "projectId": 7,
-      "title": "Rewrite landing page copy",
-      "description": "Update marketing copy for landing pages",
-      "status": "TODO",
-      "priority": "MEDIUM",
-      "assignedTo": 10,
-      "dueDate": "2026-11-10"
-    },
-    {
-      "id": "118",
-      "projectId": 8,
-      "title": "Run dependency vulnerability scan",
-      "description": "Scan all dependencies for known vulnerabilities",
-      "status": "IN_PROGRESS",
-      "priority": "HIGH",
-      "assignedTo": 2,
-      "dueDate": "2026-09-18"
-    },
-    {
-      "id": "119",
-      "projectId": 8,
-      "title": "Review authentication flow",
-      "description": "Audit auth flow for security gaps",
-      "status": "TODO",
-      "priority": "HIGH",
-      "assignedTo": 3,
-      "dueDate": "2026-10-05"
-    },
-    {
-      "id": "120",
-      "projectId": 9,
-      "title": "Set up CI pipeline",
-      "description": "Configure automated build and test pipeline",
-      "status": "COMPLETED",
-      "priority": "MEDIUM",
-      "assignedTo": 5,
-      "dueDate": "2026-07-20"
-    },
-    {
-      "id": "121",
-      "projectId": 9,
-      "title": "Add automated deployment",
-      "description": "Set up CD to staging and production",
-      "status": "COMPLETED",
-      "priority": "HIGH",
-      "assignedTo": 6,
-      "dueDate": "2026-08-10"
-    },
-    {
-      "id": "122",
-      "projectId": 10,
-      "title": "Design onboarding flow wireframes",
-      "description": "Sketch new onboarding screens",
-      "status": "TODO",
-      "priority": "MEDIUM",
-      "assignedTo": 8,
-      "dueDate": "2026-10-15"
-    },
-    {
-      "id": "123",
-      "projectId": 10,
-      "title": "Implement onboarding tooltips",
-      "description": "Add contextual tooltips for new users",
-      "status": "TODO",
-      "priority": "LOW",
-      "assignedTo": 9,
-      "dueDate": "2026-11-01"
-    },
-    {
-      "title": "muskan",
-      "description": "asdbajdfiajf",
-      "assignedTo": "6",
+      "title": "Context creation and Global Styling",
+      "description": "Create auth context and project context and also create global variables for styling",
+      "assignedTo": "ZlAx6C6TRvQ",
       "dueDate": "2026-09-24",
       "priority": "MEDIUM",
-      "id": "c_ZVPFSpvQ8"
+      "status": "TODO",
+      "projectId": "0aKLW3nAil8",
+      "id": "COMJxUAUIbY"
     },
     {
-      "title": "muskan",
-      "description": "sdhafhioaejfikjedfkw",
-      "assignedTo": "5",
-      "dueDate": "2026-09-24",
+      "title": "Create nested routing and pages ",
+      "description": "Create routes and page componenets",
+      "assignedTo": "YyXlJsrkJl0",
+      "dueDate": "2026-09-26",
       "priority": "MEDIUM",
-      "id": "xc0OzDsOjSw"
-    },
-    {
-      "title": "muskan",
-      "description": "ndkjfopfko",
-      "assignedTo": "8",
-      "dueDate": "2026-09-24",
-      "priority": "MEDIUM",
-      "id": "oif1CeRCITE"
+      "status": "IN_PROGRESS",
+      "projectId": "0aKLW3nAil8",
+      "id": "DqRSCsLfYWQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
